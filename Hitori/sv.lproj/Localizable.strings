@@ -1,0 +1,42 @@
+/* 
+  Localizable.strings
+  Takuzu
+
+  Created by Erland Isaksson on 2019-08-10.
+  Copyright © 2019 Erland Isaksson. All rights reserved.
+*/
+"selectMode" = "Välj typ av spel";
+"easy" = "Enkelt";
+"medium" = "Normalt";
+"hard" = "Svårt";
+"veryHard" = "Mycket svårt";
+"selectLevel" = "Välj bana";
+"back" = "Tillbaka";
+"next" = "Nästa";
+"loading" = "Laddar...";
+"restart" = "Starta om";
+"quit" = "Avsluta";
+"hint" = "Ledtråd";
+"noHintAvailable" = "Ingen ledtråd tillgänglig";
+"completedIn" = "Slutfört på";
+"congratulations" = "Grattis";
+"record" = "Rekord";
+"notCompleted" = "Ej slutfört";
+"rule1" = "Ej svarta rutor måste vara unika i rad/kolumn";
+"rule2" = "Aldrig två svarta rutor bredvid varandra";
+"rule3" = "Alla ej svarta rutor måste forma ett fält";
+"rule4" = "";
+"hintAdjacentTriplets" = "Three in a row";
+"hintSquareBetweenPair" = "Square between equal numbers";
+"hintPairInduction" = "Another pair on this row/column";
+"hintShadingInRowsColumns" = "Only one number per row/column can be left unshaded";
+"hintUnshadeAroundShaded" = "Two shaded can't be beside each other";
+"hintUnshadeToAvoidPartition" = "Board can't be divided into multiple fields";
+"hintShadeCornerWithPairs" = "Corner can't be separated into its own field";
+"hintTwoPairsInCorner" = "Corner can't be separated into its own field";
+"hintTwoPairsAtBorder" = "Avoid separate field beside pairs at border";
+"hintPairAndCrossedPair" = "Crossed pair on same row/column as pair";
+"hintTwoPairsWithNumberBetween" = "Related pairs force unshaded";
+"hintPairInCorner" = "Ensure single field due to pair close to corner";
+"hintLookForwardToAvoidPartition" = "Avoid multiple fields further on";
+

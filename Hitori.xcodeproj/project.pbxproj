@@ -38,7 +38,6 @@
 		DC04A13B2306A1F500A0DB77 /* SingleGameScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = DC04A1242306A1F500A0DB77 /* SingleGameScene.sks */; };
 		DC04A13F2306A22F00A0DB77 /* SolverTechnique.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC04A13D2306A22F00A0DB77 /* SolverTechnique.swift */; };
 		DC04A1402306A22F00A0DB77 /* BoardHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC04A13E2306A22F00A0DB77 /* BoardHandler.swift */; };
-		DC04A1422306A23E00A0DB77 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = DC04A1412306A23E00A0DB77 /* Localizable.strings */; };
 		DC04A14A2306C69300A0DB77 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC04A1492306C69300A0DB77 /* AppDelegate.swift */; };
 		DC04A1542306C69400A0DB77 /* _osx.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DC04A1532306C69400A0DB77 /* _osx.xcassets */; };
 		DC04A1572306C69400A0DB77 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DC04A1552306C69400A0DB77 /* Main.storyboard */; };
@@ -69,7 +68,6 @@
 		DC04A1752306C78700A0DB77 /* TechniqueSolverBoard.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC04A11E2306A1F400A0DB77 /* TechniqueSolverBoard.swift */; };
 		DC04A1762306C78C00A0DB77 /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC04A0F02306A16200A0DB77 /* GameViewController.swift */; };
 		DC04A1772306C79400A0DB77 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DC04A0F52306A16300A0DB77 /* Assets.xcassets */; };
-		DC04A1782306C79B00A0DB77 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = DC04A1412306A23E00A0DB77 /* Localizable.strings */; };
 		DC04A17A2306F0DD00A0DB77 /* BoardCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC04A1792306F0DD00A0DB77 /* BoardCell.swift */; };
 		DC04A17C2306F75C00A0DB77 /* AbstractSolverBoardTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC04A17B2306F75C00A0DB77 /* AbstractSolverBoardTests.swift */; };
 		DC04A17E230703E200A0DB77 /* BoardGeneratorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC04A17D230703E200A0DB77 /* BoardGeneratorTests.swift */; };
@@ -96,6 +94,8 @@
 		DC04A1AE23085FD800A0DB77 /* PairInCornerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC04A1AD23085FD800A0DB77 /* PairInCornerTests.swift */; };
 		DC04A1B02308661800A0DB77 /* LookForwardToAvoidPartition.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC04A1AF2308661800A0DB77 /* LookForwardToAvoidPartition.swift */; };
 		DC04A1B223086E4B00A0DB77 /* LookForwardToAvoidPartitionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC04A1B123086E4B00A0DB77 /* LookForwardToAvoidPartitionTests.swift */; };
+		DC04A1B32308833D00A0DB77 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = DC04A1B62308833D00A0DB77 /* Localizable.strings */; };
+		DC04A1B42308833D00A0DB77 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = DC04A1B62308833D00A0DB77 /* Localizable.strings */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -144,7 +144,6 @@
 		DC04A1242306A1F500A0DB77 /* SingleGameScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = SingleGameScene.sks; sourceTree = "<group>"; };
 		DC04A13D2306A22F00A0DB77 /* SolverTechnique.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SolverTechnique.swift; sourceTree = "<group>"; };
 		DC04A13E2306A22F00A0DB77 /* BoardHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BoardHandler.swift; sourceTree = "<group>"; };
-		DC04A1412306A23E00A0DB77 /* Localizable.strings */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; path = Localizable.strings; sourceTree = "<group>"; };
 		DC04A1472306C69300A0DB77 /* HitoriOSX.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HitoriOSX.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DC04A1492306C69300A0DB77 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		DC04A1532306C69400A0DB77 /* _osx.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = _osx.xcassets; sourceTree = "<group>"; };
@@ -177,6 +176,8 @@
 		DC04A1AD23085FD800A0DB77 /* PairInCornerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PairInCornerTests.swift; sourceTree = "<group>"; };
 		DC04A1AF2308661800A0DB77 /* LookForwardToAvoidPartition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LookForwardToAvoidPartition.swift; sourceTree = "<group>"; };
 		DC04A1B123086E4B00A0DB77 /* LookForwardToAvoidPartitionTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LookForwardToAvoidPartitionTests.swift; sourceTree = "<group>"; };
+		DC04A1B52308833D00A0DB77 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		DC04A1B72308835400A0DB77 /* sv */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = sv; path = sv.lproj/Localizable.strings; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -256,7 +257,7 @@
 				DC04A0F22306A16200A0DB77 /* Main.storyboard */,
 				DC04A0F52306A16300A0DB77 /* Assets.xcassets */,
 				DC04A0F72306A16300A0DB77 /* LaunchScreen.storyboard */,
-				DC04A1412306A23E00A0DB77 /* Localizable.strings */,
+				DC04A1B62308833D00A0DB77 /* Localizable.strings */,
 				DC04A0FA2306A16300A0DB77 /* Info.plist */,
 			);
 			path = Hitori;
@@ -402,6 +403,7 @@
 			knownRegions = (
 				en,
 				Base,
+				sv,
 			);
 			mainGroup = DC04A0DC2306A16200A0DB77;
 			productRefGroup = DC04A0E62306A16200A0DB77 /* Products */;
@@ -425,7 +427,7 @@
 				DC04A0F62306A16300A0DB77 /* Assets.xcassets in Resources */,
 				DC04A1372306A1F500A0DB77 /* SelectLevelScene.sks in Resources */,
 				DC04A0F92306A16300A0DB77 /* LaunchScreen.storyboard in Resources */,
-				DC04A1422306A23E00A0DB77 /* Localizable.strings in Resources */,
+				DC04A1B32308833D00A0DB77 /* Localizable.strings in Resources */,
 				DC04A1302306A1F500A0DB77 /* SelectDifficultyScene.sks in Resources */,
 				DC04A13B2306A1F500A0DB77 /* SingleGameScene.sks in Resources */,
 			);
@@ -447,7 +449,7 @@
 				DC04A1712306C78700A0DB77 /* SingleGameScene.sks in Resources */,
 				DC04A16D2306C78700A0DB77 /* SelectLevelScene.sks in Resources */,
 				DC04A1772306C79400A0DB77 /* Assets.xcassets in Resources */,
-				DC04A1782306C79B00A0DB77 /* Localizable.strings in Resources */,
+				DC04A1B42308833D00A0DB77 /* Localizable.strings in Resources */,
 				DC04A16B2306C78700A0DB77 /* SelectDifficultyScene.sks in Resources */,
 				DC04A1572306C69400A0DB77 /* Main.storyboard in Resources */,
 			);
@@ -585,6 +587,15 @@
 			name = Main.storyboard;
 			sourceTree = "<group>";
 		};
+		DC04A1B62308833D00A0DB77 /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				DC04A1B52308833D00A0DB77 /* en */,
+				DC04A1B72308835400A0DB77 /* sv */,
+			);
+			name = Localizable.strings;
+			sourceTree = "<group>";
+		};
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
@@ -592,6 +603,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
@@ -653,6 +665,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";

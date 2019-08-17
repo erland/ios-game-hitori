@@ -25,10 +25,10 @@
 "congratulations" = "Congratulations";
 "record" = "Record";
 "notCompleted" = "Not completed";
-"rule1" = "White cells must be unique in row/column";
-"rule2" = "Never two black cells beside or beneath each other";
-"rule3" = "All white cells must form a single area";
-"rule4" = "Yellow is treated as white";
+"rule1" = "Non black cells must be unique in row/column";
+"rule2" = "Never two black cells beside each other";
+"rule3" = "All non black cells must form a single area";
+"rule4" = "";
 "hintAdjacentTriplets" = "Three in a row";
 "hintSquareBetweenPair" = "Square between equal numbers";
 "hintPairInduction" = "Another pair on this row/column";
