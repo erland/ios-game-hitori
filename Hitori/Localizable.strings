@@ -1,0 +1,45 @@
+/* 
+  Localizable.strings
+  Takuzu
+
+  Created by Erland Isaksson on 2019-08-10.
+  Copyright © 2019 Erland Isaksson. All rights reserved.
+*/
+"selectMode" = "Select mode";
+"easy" = "Easy";
+"medium" = "Medium";
+"hard" = "Hard";
+"veryHard" = "Very hard";
+"generateNew" = "Generate new";
+"previouslyCompleted" = "Previously completed";
+"previouslyStarted" = "Previously started";
+"selectLevel" = "Select level";
+"back" = "Back";
+"next" = "Next";
+"loading" = "Loading...";
+"restart" = "Restart";
+"quit" = "Quit";
+"hint" = "Hint";
+"noHintAvailable" = "No hint available";
+"completedIn" = "Completed in";
+"congratulations" = "Congratulations";
+"record" = "Record";
+"notCompleted" = "Not completed";
+"rule1" = "White cells must be unique in row/column";
+"rule2" = "Never two black cells beside or beneath each other";
+"rule3" = "All white cells must form a single area";
+"rule4" = "Yellow is treated as white";
+"hintAdjacentTriplets" = "Three in a row";
+"hintSquareBetweenPair" = "Square between equal numbers";
+"hintPairInduction" = "Another pair on this row/column";
+"hintShadingInRowsColumns" = "Only one number per row/column can be left unshaded";
+"hintUnshadeAroundShaded" = "Two shaded can't be beside each other";
+"hintUnshadeToAvoidPartition" = "Board can't be divided into multiple fields";
+"hintShadeCornerWithPairs" = "Corner can't be separated into its own field";
+"hintTwoPairsInCorner" = "Corner can't be separated into its own field";
+"hintTwoPairsAtBorder" = "Avoid separate field beside pairs at border";
+"hintPairAndCrossedPair" = "Crossed pair on same row/column as pair";
+"hintTwoPairsWithNumberBetween" = "Related pairs force unshaded";
+"hintPairInCorner" = "Ensure single field due to pair close to corner";
+"hintLookForwardToAvoidPartition" = "Avoid multiple fields further on";
+

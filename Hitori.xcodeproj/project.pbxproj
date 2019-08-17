@@ -8,14 +8,94 @@
 
 /* Begin PBXBuildFile section */
 		DC04A0E92306A16200A0DB77 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC04A0E82306A16200A0DB77 /* AppDelegate.swift */; };
-		DC04A0EB2306A16200A0DB77 /* GameScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = DC04A0EA2306A16200A0DB77 /* GameScene.sks */; };
-		DC04A0ED2306A16200A0DB77 /* Actions.sks in Resources */ = {isa = PBXBuildFile; fileRef = DC04A0EC2306A16200A0DB77 /* Actions.sks */; };
-		DC04A0EF2306A16200A0DB77 /* GameScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC04A0EE2306A16200A0DB77 /* GameScene.swift */; };
 		DC04A0F12306A16200A0DB77 /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC04A0F02306A16200A0DB77 /* GameViewController.swift */; };
 		DC04A0F42306A16200A0DB77 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DC04A0F22306A16200A0DB77 /* Main.storyboard */; };
 		DC04A0F62306A16300A0DB77 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DC04A0F52306A16300A0DB77 /* Assets.xcassets */; };
 		DC04A0F92306A16300A0DB77 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DC04A0F72306A16300A0DB77 /* LaunchScreen.storyboard */; };
-		DC04A1042306A16400A0DB77 /* HitoriTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC04A1032306A16400A0DB77 /* HitoriTests.swift */; };
+		DC04A1042306A16400A0DB77 /* BoardTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC04A1032306A16400A0DB77 /* BoardTests.swift */; };
+		DC04A1252306A1F500A0DB77 /* SelectDifficultyScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC04A10E2306A1F300A0DB77 /* SelectDifficultyScene.swift */; };
+		DC04A1262306A1F500A0DB77 /* BoardStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC04A10F2306A1F300A0DB77 /* BoardStorage.swift */; };
+		DC04A1272306A1F500A0DB77 /* SingleGameOverScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = DC04A1102306A1F300A0DB77 /* SingleGameOverScene.sks */; };
+		DC04A1282306A1F500A0DB77 /* SingleGameOverScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC04A1112306A1F300A0DB77 /* SingleGameOverScene.swift */; };
+		DC04A1292306A1F500A0DB77 /* SKScene+Localization.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC04A1122306A1F300A0DB77 /* SKScene+Localization.swift */; };
+		DC04A12A2306A1F500A0DB77 /* HitoriRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC04A1132306A1F300A0DB77 /* HitoriRepository.swift */; };
+		DC04A12B2306A1F500A0DB77 /* Board.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC04A1142306A1F300A0DB77 /* Board.swift */; };
+		DC04A12C2306A1F500A0DB77 /* BruteForceSolverBoard.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC04A1152306A1F300A0DB77 /* BruteForceSolverBoard.swift */; };
+		DC04A12D2306A1F500A0DB77 /* AbstractSolverBoard.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC04A1162306A1F400A0DB77 /* AbstractSolverBoard.swift */; };
+		DC04A12E2306A1F500A0DB77 /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC04A1172306A1F400A0DB77 /* Color.swift */; };
+		DC04A12F2306A1F500A0DB77 /* Number.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC04A1182306A1F400A0DB77 /* Number.swift */; };
+		DC04A1302306A1F500A0DB77 /* SelectDifficultyScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = DC04A1192306A1F400A0DB77 /* SelectDifficultyScene.sks */; };
+		DC04A1312306A1F500A0DB77 /* BoardGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC04A11A2306A1F400A0DB77 /* BoardGenerator.swift */; };
+		DC04A1322306A1F500A0DB77 /* BoardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC04A11B2306A1F400A0DB77 /* BoardView.swift */; };
+		DC04A1332306A1F500A0DB77 /* Array2D.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC04A11C2306A1F400A0DB77 /* Array2D.swift */; };
+		DC04A1342306A1F500A0DB77 /* NumberView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC04A11D2306A1F400A0DB77 /* NumberView.swift */; };
+		DC04A1352306A1F500A0DB77 /* TechniqueSolverBoard.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC04A11E2306A1F400A0DB77 /* TechniqueSolverBoard.swift */; };
+		DC04A1362306A1F500A0DB77 /* GameDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC04A11F2306A1F400A0DB77 /* GameDelegate.swift */; };
+		DC04A1372306A1F500A0DB77 /* SelectLevelScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = DC04A1202306A1F400A0DB77 /* SelectLevelScene.sks */; };
+		DC04A1382306A1F500A0DB77 /* SingleGameScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC04A1212306A1F500A0DB77 /* SingleGameScene.swift */; };
+		DC04A1392306A1F500A0DB77 /* Difficulty.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC04A1222306A1F500A0DB77 /* Difficulty.swift */; };
+		DC04A13A2306A1F500A0DB77 /* SelectLevelScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC04A1232306A1F500A0DB77 /* SelectLevelScene.swift */; };
+		DC04A13B2306A1F500A0DB77 /* SingleGameScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = DC04A1242306A1F500A0DB77 /* SingleGameScene.sks */; };
+		DC04A13F2306A22F00A0DB77 /* SolverTechnique.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC04A13D2306A22F00A0DB77 /* SolverTechnique.swift */; };
+		DC04A1402306A22F00A0DB77 /* BoardHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC04A13E2306A22F00A0DB77 /* BoardHandler.swift */; };
+		DC04A1422306A23E00A0DB77 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = DC04A1412306A23E00A0DB77 /* Localizable.strings */; };
+		DC04A14A2306C69300A0DB77 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC04A1492306C69300A0DB77 /* AppDelegate.swift */; };
+		DC04A1542306C69400A0DB77 /* _osx.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DC04A1532306C69400A0DB77 /* _osx.xcassets */; };
+		DC04A1572306C69400A0DB77 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DC04A1552306C69400A0DB77 /* Main.storyboard */; };
+		DC04A15D2306C78700A0DB77 /* BoardHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC04A13E2306A22F00A0DB77 /* BoardHandler.swift */; };
+		DC04A15E2306C78700A0DB77 /* SolverTechnique.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC04A13D2306A22F00A0DB77 /* SolverTechnique.swift */; };
+		DC04A15F2306C78700A0DB77 /* AbstractSolverBoard.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC04A1162306A1F400A0DB77 /* AbstractSolverBoard.swift */; };
+		DC04A1602306C78700A0DB77 /* Array2D.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC04A11C2306A1F400A0DB77 /* Array2D.swift */; };
+		DC04A1612306C78700A0DB77 /* Board.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC04A1142306A1F300A0DB77 /* Board.swift */; };
+		DC04A1622306C78700A0DB77 /* BoardGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC04A11A2306A1F400A0DB77 /* BoardGenerator.swift */; };
+		DC04A1632306C78700A0DB77 /* BoardStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC04A10F2306A1F300A0DB77 /* BoardStorage.swift */; };
+		DC04A1642306C78700A0DB77 /* BoardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC04A11B2306A1F400A0DB77 /* BoardView.swift */; };
+		DC04A1652306C78700A0DB77 /* BruteForceSolverBoard.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC04A1152306A1F300A0DB77 /* BruteForceSolverBoard.swift */; };
+		DC04A1662306C78700A0DB77 /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC04A1172306A1F400A0DB77 /* Color.swift */; };
+		DC04A1672306C78700A0DB77 /* Difficulty.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC04A1222306A1F500A0DB77 /* Difficulty.swift */; };
+		DC04A1682306C78700A0DB77 /* GameDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC04A11F2306A1F400A0DB77 /* GameDelegate.swift */; };
+		DC04A1692306C78700A0DB77 /* Number.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC04A1182306A1F400A0DB77 /* Number.swift */; };
+		DC04A16A2306C78700A0DB77 /* NumberView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC04A11D2306A1F400A0DB77 /* NumberView.swift */; };
+		DC04A16B2306C78700A0DB77 /* SelectDifficultyScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = DC04A1192306A1F400A0DB77 /* SelectDifficultyScene.sks */; };
+		DC04A16C2306C78700A0DB77 /* SelectDifficultyScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC04A10E2306A1F300A0DB77 /* SelectDifficultyScene.swift */; };
+		DC04A16D2306C78700A0DB77 /* SelectLevelScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = DC04A1202306A1F400A0DB77 /* SelectLevelScene.sks */; };
+		DC04A16E2306C78700A0DB77 /* SelectLevelScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC04A1232306A1F500A0DB77 /* SelectLevelScene.swift */; };
+		DC04A16F2306C78700A0DB77 /* SingleGameOverScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = DC04A1102306A1F300A0DB77 /* SingleGameOverScene.sks */; };
+		DC04A1702306C78700A0DB77 /* SingleGameOverScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC04A1112306A1F300A0DB77 /* SingleGameOverScene.swift */; };
+		DC04A1712306C78700A0DB77 /* SingleGameScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = DC04A1242306A1F500A0DB77 /* SingleGameScene.sks */; };
+		DC04A1722306C78700A0DB77 /* SingleGameScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC04A1212306A1F500A0DB77 /* SingleGameScene.swift */; };
+		DC04A1732306C78700A0DB77 /* SKScene+Localization.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC04A1122306A1F300A0DB77 /* SKScene+Localization.swift */; };
+		DC04A1742306C78700A0DB77 /* HitoriRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC04A1132306A1F300A0DB77 /* HitoriRepository.swift */; };
+		DC04A1752306C78700A0DB77 /* TechniqueSolverBoard.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC04A11E2306A1F400A0DB77 /* TechniqueSolverBoard.swift */; };
+		DC04A1762306C78C00A0DB77 /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC04A0F02306A16200A0DB77 /* GameViewController.swift */; };
+		DC04A1772306C79400A0DB77 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DC04A0F52306A16300A0DB77 /* Assets.xcassets */; };
+		DC04A1782306C79B00A0DB77 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = DC04A1412306A23E00A0DB77 /* Localizable.strings */; };
+		DC04A17A2306F0DD00A0DB77 /* BoardCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC04A1792306F0DD00A0DB77 /* BoardCell.swift */; };
+		DC04A17C2306F75C00A0DB77 /* AbstractSolverBoardTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC04A17B2306F75C00A0DB77 /* AbstractSolverBoardTests.swift */; };
+		DC04A17E230703E200A0DB77 /* BoardGeneratorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC04A17D230703E200A0DB77 /* BoardGeneratorTests.swift */; };
+		DC04A18023070EAE00A0DB77 /* AdjacentTriplets.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC04A17F23070EAE00A0DB77 /* AdjacentTriplets.swift */; };
+		DC04A1822307102800A0DB77 /* SquareBetweenPair.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC04A1812307102800A0DB77 /* SquareBetweenPair.swift */; };
+		DC04A184230710E300A0DB77 /* PairInduction.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC04A183230710E300A0DB77 /* PairInduction.swift */; };
+		DC04A1862307138600A0DB77 /* PairInductionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC04A1852307138600A0DB77 /* PairInductionTests.swift */; };
+		DC04A1882307BD7700A0DB77 /* ShadingInRowsColumns.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC04A1872307BD7700A0DB77 /* ShadingInRowsColumns.swift */; };
+		DC04A18A2307BE9200A0DB77 /* UnshadeAroundShaded.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC04A1892307BE9200A0DB77 /* UnshadeAroundShaded.swift */; };
+		DC04A18C2307BFCD00A0DB77 /* UnshadeToAvoidPartition.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC04A18B2307BFCD00A0DB77 /* UnshadeToAvoidPartition.swift */; };
+		DC04A18E2307C37300A0DB77 /* UnshadeToAvoidPartitionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC04A18D2307C37300A0DB77 /* UnshadeToAvoidPartitionTests.swift */; };
+		DC04A1902307C69300A0DB77 /* ShadeCornerWithPairs.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC04A18F2307C69300A0DB77 /* ShadeCornerWithPairs.swift */; };
+		DC04A1922307C80300A0DB77 /* ShadeCornerWithPairsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC04A1912307C80300A0DB77 /* ShadeCornerWithPairsTests.swift */; };
+		DC04A1942307CA2400A0DB77 /* TwoPairsInCorner.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC04A1932307CA2400A0DB77 /* TwoPairsInCorner.swift */; };
+		DC04A1962307CE5300A0DB77 /* TwoPairsInCornerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC04A1952307CE5300A0DB77 /* TwoPairsInCornerTests.swift */; };
+		DC04A19A2307E95300A0DB77 /* TwoParisAtBorder.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC04A1992307E95300A0DB77 /* TwoParisAtBorder.swift */; };
+		DC04A19C2307ED9800A0DB77 /* TwoPairsAtBorderTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC04A19B2307ED9800A0DB77 /* TwoPairsAtBorderTest.swift */; };
+		DC04A19E2307FF8500A0DB77 /* TwoPairsWIthNumberBetween.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC04A19D2307FF8500A0DB77 /* TwoPairsWIthNumberBetween.swift */; };
+		DC04A1A023080CBE00A0DB77 /* TwoPairsWithNumberBetweenTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC04A19F23080CBE00A0DB77 /* TwoPairsWithNumberBetweenTests.swift */; };
+		DC04A1A22308144B00A0DB77 /* PairAndCrossedPair.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC04A1A12308144B00A0DB77 /* PairAndCrossedPair.swift */; };
+		DC04A1A4230817EF00A0DB77 /* PairAndCrossedPairTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC04A1A3230817EF00A0DB77 /* PairAndCrossedPairTests.swift */; };
+		DC04A1AA2308572400A0DB77 /* HitoryRepositoryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC04A1A92308572400A0DB77 /* HitoryRepositoryTests.swift */; };
+		DC04A1AC23085CEE00A0DB77 /* PairInCorner.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC04A1AB23085CEE00A0DB77 /* PairInCorner.swift */; };
+		DC04A1AE23085FD800A0DB77 /* PairInCornerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC04A1AD23085FD800A0DB77 /* PairInCornerTests.swift */; };
+		DC04A1B02308661800A0DB77 /* LookForwardToAvoidPartition.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC04A1AF2308661800A0DB77 /* LookForwardToAvoidPartition.swift */; };
+		DC04A1B223086E4B00A0DB77 /* LookForwardToAvoidPartitionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC04A1B123086E4B00A0DB77 /* LookForwardToAvoidPartitionTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -31,17 +111,72 @@
 /* Begin PBXFileReference section */
 		DC04A0E52306A16200A0DB77 /* Hitori.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Hitori.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DC04A0E82306A16200A0DB77 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		DC04A0EA2306A16200A0DB77 /* GameScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = GameScene.sks; sourceTree = "<group>"; };
-		DC04A0EC2306A16200A0DB77 /* Actions.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = Actions.sks; sourceTree = "<group>"; };
-		DC04A0EE2306A16200A0DB77 /* GameScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameScene.swift; sourceTree = "<group>"; };
 		DC04A0F02306A16200A0DB77 /* GameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameViewController.swift; sourceTree = "<group>"; };
 		DC04A0F32306A16200A0DB77 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		DC04A0F52306A16300A0DB77 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		DC04A0F82306A16300A0DB77 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		DC04A0FA2306A16300A0DB77 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		DC04A0FF2306A16400A0DB77 /* HitoriTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = HitoriTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		DC04A1032306A16400A0DB77 /* HitoriTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HitoriTests.swift; sourceTree = "<group>"; };
+		DC04A1032306A16400A0DB77 /* BoardTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoardTests.swift; sourceTree = "<group>"; };
 		DC04A1052306A16400A0DB77 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		DC04A10E2306A1F300A0DB77 /* SelectDifficultyScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SelectDifficultyScene.swift; sourceTree = "<group>"; };
+		DC04A10F2306A1F300A0DB77 /* BoardStorage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BoardStorage.swift; sourceTree = "<group>"; };
+		DC04A1102306A1F300A0DB77 /* SingleGameOverScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = SingleGameOverScene.sks; sourceTree = "<group>"; };
+		DC04A1112306A1F300A0DB77 /* SingleGameOverScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SingleGameOverScene.swift; sourceTree = "<group>"; };
+		DC04A1122306A1F300A0DB77 /* SKScene+Localization.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "SKScene+Localization.swift"; sourceTree = "<group>"; };
+		DC04A1132306A1F300A0DB77 /* HitoriRepository.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HitoriRepository.swift; sourceTree = "<group>"; };
+		DC04A1142306A1F300A0DB77 /* Board.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Board.swift; sourceTree = "<group>"; };
+		DC04A1152306A1F300A0DB77 /* BruteForceSolverBoard.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BruteForceSolverBoard.swift; sourceTree = "<group>"; };
+		DC04A1162306A1F400A0DB77 /* AbstractSolverBoard.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AbstractSolverBoard.swift; sourceTree = "<group>"; };
+		DC04A1172306A1F400A0DB77 /* Color.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Color.swift; sourceTree = "<group>"; };
+		DC04A1182306A1F400A0DB77 /* Number.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Number.swift; sourceTree = "<group>"; };
+		DC04A1192306A1F400A0DB77 /* SelectDifficultyScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = SelectDifficultyScene.sks; sourceTree = "<group>"; };
+		DC04A11A2306A1F400A0DB77 /* BoardGenerator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BoardGenerator.swift; sourceTree = "<group>"; };
+		DC04A11B2306A1F400A0DB77 /* BoardView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BoardView.swift; sourceTree = "<group>"; };
+		DC04A11C2306A1F400A0DB77 /* Array2D.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Array2D.swift; sourceTree = "<group>"; };
+		DC04A11D2306A1F400A0DB77 /* NumberView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NumberView.swift; sourceTree = "<group>"; };
+		DC04A11E2306A1F400A0DB77 /* TechniqueSolverBoard.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TechniqueSolverBoard.swift; sourceTree = "<group>"; };
+		DC04A11F2306A1F400A0DB77 /* GameDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameDelegate.swift; sourceTree = "<group>"; };
+		DC04A1202306A1F400A0DB77 /* SelectLevelScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = SelectLevelScene.sks; sourceTree = "<group>"; };
+		DC04A1212306A1F500A0DB77 /* SingleGameScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SingleGameScene.swift; sourceTree = "<group>"; };
+		DC04A1222306A1F500A0DB77 /* Difficulty.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Difficulty.swift; sourceTree = "<group>"; };
+		DC04A1232306A1F500A0DB77 /* SelectLevelScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SelectLevelScene.swift; sourceTree = "<group>"; };
+		DC04A1242306A1F500A0DB77 /* SingleGameScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = SingleGameScene.sks; sourceTree = "<group>"; };
+		DC04A13D2306A22F00A0DB77 /* SolverTechnique.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SolverTechnique.swift; sourceTree = "<group>"; };
+		DC04A13E2306A22F00A0DB77 /* BoardHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BoardHandler.swift; sourceTree = "<group>"; };
+		DC04A1412306A23E00A0DB77 /* Localizable.strings */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; path = Localizable.strings; sourceTree = "<group>"; };
+		DC04A1472306C69300A0DB77 /* HitoriOSX.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HitoriOSX.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		DC04A1492306C69300A0DB77 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		DC04A1532306C69400A0DB77 /* _osx.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = _osx.xcassets; sourceTree = "<group>"; };
+		DC04A1562306C69400A0DB77 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		DC04A1582306C69400A0DB77 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		DC04A1592306C69400A0DB77 /* HitoriOSX.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = HitoriOSX.entitlements; sourceTree = "<group>"; };
+		DC04A1792306F0DD00A0DB77 /* BoardCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoardCell.swift; sourceTree = "<group>"; };
+		DC04A17B2306F75C00A0DB77 /* AbstractSolverBoardTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AbstractSolverBoardTests.swift; sourceTree = "<group>"; };
+		DC04A17D230703E200A0DB77 /* BoardGeneratorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoardGeneratorTests.swift; sourceTree = "<group>"; };
+		DC04A17F23070EAE00A0DB77 /* AdjacentTriplets.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdjacentTriplets.swift; sourceTree = "<group>"; };
+		DC04A1812307102800A0DB77 /* SquareBetweenPair.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SquareBetweenPair.swift; sourceTree = "<group>"; };
+		DC04A183230710E300A0DB77 /* PairInduction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PairInduction.swift; sourceTree = "<group>"; };
+		DC04A1852307138600A0DB77 /* PairInductionTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PairInductionTests.swift; sourceTree = "<group>"; };
+		DC04A1872307BD7700A0DB77 /* ShadingInRowsColumns.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShadingInRowsColumns.swift; sourceTree = "<group>"; };
+		DC04A1892307BE9200A0DB77 /* UnshadeAroundShaded.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnshadeAroundShaded.swift; sourceTree = "<group>"; };
+		DC04A18B2307BFCD00A0DB77 /* UnshadeToAvoidPartition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnshadeToAvoidPartition.swift; sourceTree = "<group>"; };
+		DC04A18D2307C37300A0DB77 /* UnshadeToAvoidPartitionTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnshadeToAvoidPartitionTests.swift; sourceTree = "<group>"; };
+		DC04A18F2307C69300A0DB77 /* ShadeCornerWithPairs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShadeCornerWithPairs.swift; sourceTree = "<group>"; };
+		DC04A1912307C80300A0DB77 /* ShadeCornerWithPairsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShadeCornerWithPairsTests.swift; sourceTree = "<group>"; };
+		DC04A1932307CA2400A0DB77 /* TwoPairsInCorner.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TwoPairsInCorner.swift; sourceTree = "<group>"; };
+		DC04A1952307CE5300A0DB77 /* TwoPairsInCornerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TwoPairsInCornerTests.swift; sourceTree = "<group>"; };
+		DC04A1992307E95300A0DB77 /* TwoParisAtBorder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TwoParisAtBorder.swift; sourceTree = "<group>"; };
+		DC04A19B2307ED9800A0DB77 /* TwoPairsAtBorderTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TwoPairsAtBorderTest.swift; sourceTree = "<group>"; };
+		DC04A19D2307FF8500A0DB77 /* TwoPairsWIthNumberBetween.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TwoPairsWIthNumberBetween.swift; sourceTree = "<group>"; };
+		DC04A19F23080CBE00A0DB77 /* TwoPairsWithNumberBetweenTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TwoPairsWithNumberBetweenTests.swift; sourceTree = "<group>"; };
+		DC04A1A12308144B00A0DB77 /* PairAndCrossedPair.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PairAndCrossedPair.swift; sourceTree = "<group>"; };
+		DC04A1A3230817EF00A0DB77 /* PairAndCrossedPairTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PairAndCrossedPairTests.swift; sourceTree = "<group>"; };
+		DC04A1A92308572400A0DB77 /* HitoryRepositoryTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HitoryRepositoryTests.swift; sourceTree = "<group>"; };
+		DC04A1AB23085CEE00A0DB77 /* PairInCorner.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PairInCorner.swift; sourceTree = "<group>"; };
+		DC04A1AD23085FD800A0DB77 /* PairInCornerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PairInCornerTests.swift; sourceTree = "<group>"; };
+		DC04A1AF2308661800A0DB77 /* LookForwardToAvoidPartition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LookForwardToAvoidPartition.swift; sourceTree = "<group>"; };
+		DC04A1B123086E4B00A0DB77 /* LookForwardToAvoidPartitionTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LookForwardToAvoidPartitionTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -59,6 +194,13 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		DC04A1442306C69300A0DB77 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -67,6 +209,7 @@
 			children = (
 				DC04A0E72306A16200A0DB77 /* Hitori */,
 				DC04A1022306A16400A0DB77 /* HitoriTests */,
+				DC04A1482306C69300A0DB77 /* HitoriOSX */,
 				DC04A0E62306A16200A0DB77 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -76,6 +219,7 @@
 			children = (
 				DC04A0E52306A16200A0DB77 /* Hitori.app */,
 				DC04A0FF2306A16400A0DB77 /* HitoriTests.xctest */,
+				DC04A1472306C69300A0DB77 /* HitoriOSX.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -83,14 +227,36 @@
 		DC04A0E72306A16200A0DB77 /* Hitori */ = {
 			isa = PBXGroup;
 			children = (
+				DC04A13C2306A20900A0DB77 /* SolutionTechniques */,
+				DC04A1162306A1F400A0DB77 /* AbstractSolverBoard.swift */,
+				DC04A11C2306A1F400A0DB77 /* Array2D.swift */,
+				DC04A1142306A1F300A0DB77 /* Board.swift */,
+				DC04A11A2306A1F400A0DB77 /* BoardGenerator.swift */,
+				DC04A10F2306A1F300A0DB77 /* BoardStorage.swift */,
+				DC04A11B2306A1F400A0DB77 /* BoardView.swift */,
+				DC04A1152306A1F300A0DB77 /* BruteForceSolverBoard.swift */,
+				DC04A1172306A1F400A0DB77 /* Color.swift */,
+				DC04A1222306A1F500A0DB77 /* Difficulty.swift */,
+				DC04A11F2306A1F400A0DB77 /* GameDelegate.swift */,
+				DC04A1182306A1F400A0DB77 /* Number.swift */,
+				DC04A11D2306A1F400A0DB77 /* NumberView.swift */,
+				DC04A1192306A1F400A0DB77 /* SelectDifficultyScene.sks */,
+				DC04A10E2306A1F300A0DB77 /* SelectDifficultyScene.swift */,
+				DC04A1202306A1F400A0DB77 /* SelectLevelScene.sks */,
+				DC04A1232306A1F500A0DB77 /* SelectLevelScene.swift */,
+				DC04A1102306A1F300A0DB77 /* SingleGameOverScene.sks */,
+				DC04A1112306A1F300A0DB77 /* SingleGameOverScene.swift */,
+				DC04A1242306A1F500A0DB77 /* SingleGameScene.sks */,
+				DC04A1212306A1F500A0DB77 /* SingleGameScene.swift */,
+				DC04A1122306A1F300A0DB77 /* SKScene+Localization.swift */,
+				DC04A1132306A1F300A0DB77 /* HitoriRepository.swift */,
+				DC04A11E2306A1F400A0DB77 /* TechniqueSolverBoard.swift */,
 				DC04A0E82306A16200A0DB77 /* AppDelegate.swift */,
-				DC04A0EA2306A16200A0DB77 /* GameScene.sks */,
-				DC04A0EC2306A16200A0DB77 /* Actions.sks */,
-				DC04A0EE2306A16200A0DB77 /* GameScene.swift */,
 				DC04A0F02306A16200A0DB77 /* GameViewController.swift */,
 				DC04A0F22306A16200A0DB77 /* Main.storyboard */,
 				DC04A0F52306A16300A0DB77 /* Assets.xcassets */,
 				DC04A0F72306A16300A0DB77 /* LaunchScreen.storyboard */,
+				DC04A1412306A23E00A0DB77 /* Localizable.strings */,
 				DC04A0FA2306A16300A0DB77 /* Info.plist */,
 			);
 			path = Hitori;
@@ -99,10 +265,57 @@
 		DC04A1022306A16400A0DB77 /* HitoriTests */ = {
 			isa = PBXGroup;
 			children = (
-				DC04A1032306A16400A0DB77 /* HitoriTests.swift */,
+				DC04A1A92308572400A0DB77 /* HitoryRepositoryTests.swift */,
+				DC04A17D230703E200A0DB77 /* BoardGeneratorTests.swift */,
+				DC04A1032306A16400A0DB77 /* BoardTests.swift */,
 				DC04A1052306A16400A0DB77 /* Info.plist */,
+				DC04A17B2306F75C00A0DB77 /* AbstractSolverBoardTests.swift */,
+				DC04A1852307138600A0DB77 /* PairInductionTests.swift */,
+				DC04A18D2307C37300A0DB77 /* UnshadeToAvoidPartitionTests.swift */,
+				DC04A1912307C80300A0DB77 /* ShadeCornerWithPairsTests.swift */,
+				DC04A1952307CE5300A0DB77 /* TwoPairsInCornerTests.swift */,
+				DC04A19B2307ED9800A0DB77 /* TwoPairsAtBorderTest.swift */,
+				DC04A19F23080CBE00A0DB77 /* TwoPairsWithNumberBetweenTests.swift */,
+				DC04A1A3230817EF00A0DB77 /* PairAndCrossedPairTests.swift */,
+				DC04A1AD23085FD800A0DB77 /* PairInCornerTests.swift */,
+				DC04A1B123086E4B00A0DB77 /* LookForwardToAvoidPartitionTests.swift */,
 			);
 			path = HitoriTests;
+			sourceTree = "<group>";
+		};
+		DC04A13C2306A20900A0DB77 /* SolutionTechniques */ = {
+			isa = PBXGroup;
+			children = (
+				DC04A13E2306A22F00A0DB77 /* BoardHandler.swift */,
+				DC04A13D2306A22F00A0DB77 /* SolverTechnique.swift */,
+				DC04A1792306F0DD00A0DB77 /* BoardCell.swift */,
+				DC04A17F23070EAE00A0DB77 /* AdjacentTriplets.swift */,
+				DC04A1812307102800A0DB77 /* SquareBetweenPair.swift */,
+				DC04A183230710E300A0DB77 /* PairInduction.swift */,
+				DC04A1872307BD7700A0DB77 /* ShadingInRowsColumns.swift */,
+				DC04A1892307BE9200A0DB77 /* UnshadeAroundShaded.swift */,
+				DC04A18B2307BFCD00A0DB77 /* UnshadeToAvoidPartition.swift */,
+				DC04A18F2307C69300A0DB77 /* ShadeCornerWithPairs.swift */,
+				DC04A1932307CA2400A0DB77 /* TwoPairsInCorner.swift */,
+				DC04A1992307E95300A0DB77 /* TwoParisAtBorder.swift */,
+				DC04A19D2307FF8500A0DB77 /* TwoPairsWIthNumberBetween.swift */,
+				DC04A1A12308144B00A0DB77 /* PairAndCrossedPair.swift */,
+				DC04A1AB23085CEE00A0DB77 /* PairInCorner.swift */,
+				DC04A1AF2308661800A0DB77 /* LookForwardToAvoidPartition.swift */,
+			);
+			path = SolutionTechniques;
+			sourceTree = "<group>";
+		};
+		DC04A1482306C69300A0DB77 /* HitoriOSX */ = {
+			isa = PBXGroup;
+			children = (
+				DC04A1492306C69300A0DB77 /* AppDelegate.swift */,
+				DC04A1532306C69400A0DB77 /* _osx.xcassets */,
+				DC04A1552306C69400A0DB77 /* Main.storyboard */,
+				DC04A1582306C69400A0DB77 /* Info.plist */,
+				DC04A1592306C69400A0DB77 /* HitoriOSX.entitlements */,
+			);
+			path = HitoriOSX;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -143,6 +356,23 @@
 			productReference = DC04A0FF2306A16400A0DB77 /* HitoriTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
+		DC04A1462306C69300A0DB77 /* HitoriOSX */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = DC04A15A2306C69400A0DB77 /* Build configuration list for PBXNativeTarget "HitoriOSX" */;
+			buildPhases = (
+				DC04A1432306C69300A0DB77 /* Sources */,
+				DC04A1442306C69300A0DB77 /* Frameworks */,
+				DC04A1452306C69300A0DB77 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = HitoriOSX;
+			productName = HitoriOSX;
+			productReference = DC04A1472306C69300A0DB77 /* HitoriOSX.app */;
+			productType = "com.apple.product-type.application";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -159,6 +389,9 @@
 					DC04A0FE2306A16400A0DB77 = {
 						CreatedOnToolsVersion = 10.1;
 						TestTargetID = DC04A0E42306A16200A0DB77;
+					};
+					DC04A1462306C69300A0DB77 = {
+						CreatedOnToolsVersion = 10.1;
 					};
 				};
 			};
@@ -177,6 +410,7 @@
 			targets = (
 				DC04A0E42306A16200A0DB77 /* Hitori */,
 				DC04A0FE2306A16400A0DB77 /* HitoriTests */,
+				DC04A1462306C69300A0DB77 /* HitoriOSX */,
 			);
 		};
 /* End PBXProject section */
@@ -186,11 +420,14 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DC04A1272306A1F500A0DB77 /* SingleGameOverScene.sks in Resources */,
 				DC04A0F42306A16200A0DB77 /* Main.storyboard in Resources */,
-				DC04A0EB2306A16200A0DB77 /* GameScene.sks in Resources */,
 				DC04A0F62306A16300A0DB77 /* Assets.xcassets in Resources */,
+				DC04A1372306A1F500A0DB77 /* SelectLevelScene.sks in Resources */,
 				DC04A0F92306A16300A0DB77 /* LaunchScreen.storyboard in Resources */,
-				DC04A0ED2306A16200A0DB77 /* Actions.sks in Resources */,
+				DC04A1422306A23E00A0DB77 /* Localizable.strings in Resources */,
+				DC04A1302306A1F500A0DB77 /* SelectDifficultyScene.sks in Resources */,
+				DC04A13B2306A1F500A0DB77 /* SingleGameScene.sks in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -201,6 +438,21 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		DC04A1452306C69300A0DB77 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DC04A16F2306C78700A0DB77 /* SingleGameOverScene.sks in Resources */,
+				DC04A1542306C69400A0DB77 /* _osx.xcassets in Resources */,
+				DC04A1712306C78700A0DB77 /* SingleGameScene.sks in Resources */,
+				DC04A16D2306C78700A0DB77 /* SelectLevelScene.sks in Resources */,
+				DC04A1772306C79400A0DB77 /* Assets.xcassets in Resources */,
+				DC04A1782306C79B00A0DB77 /* Localizable.strings in Resources */,
+				DC04A16B2306C78700A0DB77 /* SelectDifficultyScene.sks in Resources */,
+				DC04A1572306C69400A0DB77 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -208,9 +460,43 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				DC04A0EF2306A16200A0DB77 /* GameScene.swift in Sources */,
+				DC04A12A2306A1F500A0DB77 /* HitoriRepository.swift in Sources */,
+				DC04A1282306A1F500A0DB77 /* SingleGameOverScene.swift in Sources */,
+				DC04A1392306A1F500A0DB77 /* Difficulty.swift in Sources */,
+				DC04A12E2306A1F500A0DB77 /* Color.swift in Sources */,
+				DC04A1A22308144B00A0DB77 /* PairAndCrossedPair.swift in Sources */,
+				DC04A12C2306A1F500A0DB77 /* BruteForceSolverBoard.swift in Sources */,
+				DC04A1332306A1F500A0DB77 /* Array2D.swift in Sources */,
+				DC04A18A2307BE9200A0DB77 /* UnshadeAroundShaded.swift in Sources */,
+				DC04A1352306A1F500A0DB77 /* TechniqueSolverBoard.swift in Sources */,
+				DC04A12D2306A1F500A0DB77 /* AbstractSolverBoard.swift in Sources */,
+				DC04A19E2307FF8500A0DB77 /* TwoPairsWIthNumberBetween.swift in Sources */,
+				DC04A1292306A1F500A0DB77 /* SKScene+Localization.swift in Sources */,
+				DC04A19A2307E95300A0DB77 /* TwoParisAtBorder.swift in Sources */,
+				DC04A1942307CA2400A0DB77 /* TwoPairsInCorner.swift in Sources */,
 				DC04A0F12306A16200A0DB77 /* GameViewController.swift in Sources */,
+				DC04A17A2306F0DD00A0DB77 /* BoardCell.swift in Sources */,
+				DC04A184230710E300A0DB77 /* PairInduction.swift in Sources */,
+				DC04A1322306A1F500A0DB77 /* BoardView.swift in Sources */,
+				DC04A13F2306A22F00A0DB77 /* SolverTechnique.swift in Sources */,
+				DC04A1882307BD7700A0DB77 /* ShadingInRowsColumns.swift in Sources */,
+				DC04A1312306A1F500A0DB77 /* BoardGenerator.swift in Sources */,
 				DC04A0E92306A16200A0DB77 /* AppDelegate.swift in Sources */,
+				DC04A1362306A1F500A0DB77 /* GameDelegate.swift in Sources */,
+				DC04A1B02308661800A0DB77 /* LookForwardToAvoidPartition.swift in Sources */,
+				DC04A12F2306A1F500A0DB77 /* Number.swift in Sources */,
+				DC04A1262306A1F500A0DB77 /* BoardStorage.swift in Sources */,
+				DC04A1AC23085CEE00A0DB77 /* PairInCorner.swift in Sources */,
+				DC04A12B2306A1F500A0DB77 /* Board.swift in Sources */,
+				DC04A13A2306A1F500A0DB77 /* SelectLevelScene.swift in Sources */,
+				DC04A18023070EAE00A0DB77 /* AdjacentTriplets.swift in Sources */,
+				DC04A1252306A1F500A0DB77 /* SelectDifficultyScene.swift in Sources */,
+				DC04A1902307C69300A0DB77 /* ShadeCornerWithPairs.swift in Sources */,
+				DC04A1402306A22F00A0DB77 /* BoardHandler.swift in Sources */,
+				DC04A18C2307BFCD00A0DB77 /* UnshadeToAvoidPartition.swift in Sources */,
+				DC04A1342306A1F500A0DB77 /* NumberView.swift in Sources */,
+				DC04A1382306A1F500A0DB77 /* SingleGameScene.swift in Sources */,
+				DC04A1822307102800A0DB77 /* SquareBetweenPair.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -218,7 +504,49 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				DC04A1042306A16400A0DB77 /* HitoriTests.swift in Sources */,
+				DC04A1A023080CBE00A0DB77 /* TwoPairsWithNumberBetweenTests.swift in Sources */,
+				DC04A1B223086E4B00A0DB77 /* LookForwardToAvoidPartitionTests.swift in Sources */,
+				DC04A1042306A16400A0DB77 /* BoardTests.swift in Sources */,
+				DC04A19C2307ED9800A0DB77 /* TwoPairsAtBorderTest.swift in Sources */,
+				DC04A17E230703E200A0DB77 /* BoardGeneratorTests.swift in Sources */,
+				DC04A1922307C80300A0DB77 /* ShadeCornerWithPairsTests.swift in Sources */,
+				DC04A1962307CE5300A0DB77 /* TwoPairsInCornerTests.swift in Sources */,
+				DC04A17C2306F75C00A0DB77 /* AbstractSolverBoardTests.swift in Sources */,
+				DC04A1AA2308572400A0DB77 /* HitoryRepositoryTests.swift in Sources */,
+				DC04A1A4230817EF00A0DB77 /* PairAndCrossedPairTests.swift in Sources */,
+				DC04A1AE23085FD800A0DB77 /* PairInCornerTests.swift in Sources */,
+				DC04A1862307138600A0DB77 /* PairInductionTests.swift in Sources */,
+				DC04A18E2307C37300A0DB77 /* UnshadeToAvoidPartitionTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DC04A1432306C69300A0DB77 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DC04A1702306C78700A0DB77 /* SingleGameOverScene.swift in Sources */,
+				DC04A14A2306C69300A0DB77 /* AppDelegate.swift in Sources */,
+				DC04A15E2306C78700A0DB77 /* SolverTechnique.swift in Sources */,
+				DC04A1672306C78700A0DB77 /* Difficulty.swift in Sources */,
+				DC04A1662306C78700A0DB77 /* Color.swift in Sources */,
+				DC04A1632306C78700A0DB77 /* BoardStorage.swift in Sources */,
+				DC04A1752306C78700A0DB77 /* TechniqueSolverBoard.swift in Sources */,
+				DC04A1612306C78700A0DB77 /* Board.swift in Sources */,
+				DC04A15D2306C78700A0DB77 /* BoardHandler.swift in Sources */,
+				DC04A16E2306C78700A0DB77 /* SelectLevelScene.swift in Sources */,
+				DC04A16C2306C78700A0DB77 /* SelectDifficultyScene.swift in Sources */,
+				DC04A1622306C78700A0DB77 /* BoardGenerator.swift in Sources */,
+				DC04A16A2306C78700A0DB77 /* NumberView.swift in Sources */,
+				DC04A1692306C78700A0DB77 /* Number.swift in Sources */,
+				DC04A1762306C78C00A0DB77 /* GameViewController.swift in Sources */,
+				DC04A1642306C78700A0DB77 /* BoardView.swift in Sources */,
+				DC04A15F2306C78700A0DB77 /* AbstractSolverBoard.swift in Sources */,
+				DC04A1652306C78700A0DB77 /* BruteForceSolverBoard.swift in Sources */,
+				DC04A1602306C78700A0DB77 /* Array2D.swift in Sources */,
+				DC04A1732306C78700A0DB77 /* SKScene+Localization.swift in Sources */,
+				DC04A1742306C78700A0DB77 /* HitoriRepository.swift in Sources */,
+				DC04A1682306C78700A0DB77 /* GameDelegate.swift in Sources */,
+				DC04A1722306C78700A0DB77 /* SingleGameScene.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -247,6 +575,14 @@
 				DC04A0F82306A16300A0DB77 /* Base */,
 			);
 			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		DC04A1552306C69400A0DB77 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				DC04A1562306C69400A0DB77 /* Base */,
+			);
+			name = Main.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -379,7 +715,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = info.isaksson.erland.Hitori;
+				PRODUCT_BUNDLE_IDENTIFIER = "info.isaksson.erland.Hitori-beta";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -397,7 +733,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = info.isaksson.erland.Hitori;
+				PRODUCT_BUNDLE_IDENTIFIER = "info.isaksson.erland.Hitori-beta";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -446,6 +782,50 @@
 			};
 			name = Release;
 		};
+		DC04A15B2306C69400A0DB77 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = HitoriOSX/HitoriOSX.entitlements;
+				CODE_SIGN_IDENTITY = "Mac Developer";
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = 6R6NEH26ZQ;
+				INFOPLIST_FILE = HitoriOSX/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 10.13;
+				PRODUCT_BUNDLE_IDENTIFIER = "info.isaksson.erland.Hitori-osx-beta";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+				SWIFT_VERSION = 4.2;
+			};
+			name = Debug;
+		};
+		DC04A15C2306C69400A0DB77 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = HitoriOSX/HitoriOSX.entitlements;
+				CODE_SIGN_IDENTITY = "Mac Developer";
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = 6R6NEH26ZQ;
+				INFOPLIST_FILE = HitoriOSX/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 10.13;
+				PRODUCT_BUNDLE_IDENTIFIER = "info.isaksson.erland.Hitori-osx-beta";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+				SWIFT_VERSION = 4.2;
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -472,6 +852,15 @@
 			buildConfigurations = (
 				DC04A10C2306A16400A0DB77 /* Debug */,
 				DC04A10D2306A16400A0DB77 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		DC04A15A2306C69400A0DB77 /* Build configuration list for PBXNativeTarget "HitoriOSX" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				DC04A15B2306C69400A0DB77 /* Debug */,
+				DC04A15C2306C69400A0DB77 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
