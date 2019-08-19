@@ -20,11 +20,38 @@ class BoardGeneratorTests: XCTestCase {
     }
     
     func test_generateFilledBoard_size_5() {
-        let board = BoardGenerator(size: 5).generateFilledBoard()
-        XCTAssertNotNil(board)
-        XCTAssertEqual(board?.count, 25)
+        for n in 0..<30 {
+            if let board = BoardGenerator(size: 5).generateWithLimits(timeoutSeconds: 10) {
+                print(board)
+            }
+        }
     }
-/*
+
+    func test_generateFilledBoard_size_7() {
+        for n in 0..<30 {
+            if let board = BoardGenerator(size: 7).generateWithLimits(timeoutSeconds: 20) {
+                print(board)
+            }
+        }
+    }
+
+    func test_generateFilledBoard_size_8() {
+        for n in 0..<30 {
+            if let board = BoardGenerator(size: 8).generateWithLimits(timeoutSeconds: 20) {
+                print(board)
+            }
+        }
+    }
+
+    func test_generateFilledBoard_size_9() {
+        for n in 0..<30 {
+            if let board = BoardGenerator(size: 9).generateWithLimits(timeoutSeconds: 30) {
+                print(board)
+            }
+        }
+    }
+
+    /*
     func testGenerate_size_5() {
         for _ in 0..<10 {
             if let board = BoardGenerator(size: 5).generateFilledBoard() {

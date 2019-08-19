@@ -125,6 +125,13 @@
 			remoteGlobalIDString = DC04A0E42306A16200A0DB77;
 			remoteInfo = Hitori;
 		};
+		DC634D68230B11B600953550 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = DC04A0DD2306A16200A0DB77 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = DC04A1462306C69300A0DB77;
+			remoteInfo = HitoriOSX;
+		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
@@ -376,6 +383,7 @@
 			);
 			dependencies = (
 				DC04A1012306A16400A0DB77 /* PBXTargetDependency */,
+				DC634D69230B11B600953550 /* PBXTargetDependency */,
 			);
 			name = HitoriTests;
 			productName = HitoriTests;
@@ -603,6 +611,11 @@
 			isa = PBXTargetDependency;
 			target = DC04A0E42306A16200A0DB77 /* Hitori */;
 			targetProxy = DC04A1002306A16400A0DB77 /* PBXContainerItemProxy */;
+		};
+		DC634D69230B11B600953550 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = DC04A1462306C69300A0DB77 /* HitoriOSX */;
+			targetProxy = DC634D68230B11B600953550 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 

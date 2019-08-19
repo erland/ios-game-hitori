@@ -69,6 +69,8 @@ class AbstractSolverBoard : BoardHandler {
                         select(x,y)
                     }else if ch == "?" {
                         unselect(x,y)
+                    }else {
+                        valueAt(x,y)?.selected = nil
                     }
                 }
             }
@@ -127,13 +129,21 @@ class AbstractSolverBoard : BoardHandler {
             var rowString = ""
             for x in 0..<size {
                 if let n = valueAt(x,y) {
+                    rowString = rowString + "\(n.number) "
+                }else {
+                    rowString = rowString + "  "
+                }
+            }
+            rowString = rowString + "   "
+            for x in 0..<size {
+                if let n = valueAt(x,y) {
                     if n.selected != nil && n.selected! {
-                        rowString = rowString + "X"
+                        rowString = rowString + "X "
                     }else {
-                        rowString = rowString + "\(n.number)"
+                        rowString = rowString + "  "
                     }
                 }else {
-                    rowString = rowString + " "
+                    rowString = rowString + "  "
                 }
             }
             
