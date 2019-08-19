@@ -99,6 +99,22 @@
 		DC04A1B92309291B00A0DB77 /* BruteForceSolverBoardTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC04A1B82309291B00A0DB77 /* BruteForceSolverBoardTests.swift */; };
 		DC04A1BD230A856900A0DB77 /* LonelyChecker.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC04A1BC230A856900A0DB77 /* LonelyChecker.swift */; };
 		DC04A1BF230A863300A0DB77 /* RelevantUnselect.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC04A1BE230A863300A0DB77 /* RelevantUnselect.swift */; };
+		DC04A1C0230A8BC600A0DB77 /* BoardCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC04A1792306F0DD00A0DB77 /* BoardCell.swift */; };
+		DC04A1C1230A8BCC00A0DB77 /* LonelyChecker.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC04A1BC230A856900A0DB77 /* LonelyChecker.swift */; };
+		DC04A1C2230A8BD000A0DB77 /* RelevantUnselect.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC04A1BE230A863300A0DB77 /* RelevantUnselect.swift */; };
+		DC04A1C3230A8BD400A0DB77 /* PairInCorner.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC04A1AB23085CEE00A0DB77 /* PairInCorner.swift */; };
+		DC04A1C4230A8BD700A0DB77 /* LookForwardToAvoidPartition.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC04A1AF2308661800A0DB77 /* LookForwardToAvoidPartition.swift */; };
+		DC04A1C5230A8BE000A0DB77 /* AdjacentTriplets.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC04A17F23070EAE00A0DB77 /* AdjacentTriplets.swift */; };
+		DC04A1C6230A8BE000A0DB77 /* SquareBetweenPair.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC04A1812307102800A0DB77 /* SquareBetweenPair.swift */; };
+		DC04A1C7230A8BE000A0DB77 /* PairInduction.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC04A183230710E300A0DB77 /* PairInduction.swift */; };
+		DC04A1C8230A8BE000A0DB77 /* ShadingInRowsColumns.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC04A1872307BD7700A0DB77 /* ShadingInRowsColumns.swift */; };
+		DC04A1C9230A8BE000A0DB77 /* UnshadeAroundShaded.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC04A1892307BE9200A0DB77 /* UnshadeAroundShaded.swift */; };
+		DC04A1CA230A8BE000A0DB77 /* UnshadeToAvoidPartition.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC04A18B2307BFCD00A0DB77 /* UnshadeToAvoidPartition.swift */; };
+		DC04A1CB230A8BE000A0DB77 /* ShadeCornerWithPairs.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC04A18F2307C69300A0DB77 /* ShadeCornerWithPairs.swift */; };
+		DC04A1CC230A8BE000A0DB77 /* TwoPairsInCorner.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC04A1932307CA2400A0DB77 /* TwoPairsInCorner.swift */; };
+		DC04A1CD230A8BE000A0DB77 /* TwoParisAtBorder.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC04A1992307E95300A0DB77 /* TwoParisAtBorder.swift */; };
+		DC04A1CE230A8BE000A0DB77 /* TwoPairsWIthNumberBetween.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC04A19D2307FF8500A0DB77 /* TwoPairsWIthNumberBetween.swift */; };
+		DC04A1CF230A8BE000A0DB77 /* PairAndCrossedPair.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC04A1A12308144B00A0DB77 /* PairAndCrossedPair.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -539,24 +555,40 @@
 			buildActionMask = 2147483647;
 			files = (
 				DC04A1702306C78700A0DB77 /* SingleGameOverScene.swift in Sources */,
+				DC04A1C5230A8BE000A0DB77 /* AdjacentTriplets.swift in Sources */,
 				DC04A14A2306C69300A0DB77 /* AppDelegate.swift in Sources */,
 				DC04A15E2306C78700A0DB77 /* SolverTechnique.swift in Sources */,
+				DC04A1CD230A8BE000A0DB77 /* TwoParisAtBorder.swift in Sources */,
 				DC04A1672306C78700A0DB77 /* Difficulty.swift in Sources */,
 				DC04A1662306C78700A0DB77 /* Color.swift in Sources */,
 				DC04A1632306C78700A0DB77 /* BoardStorage.swift in Sources */,
 				DC04A1752306C78700A0DB77 /* TechniqueSolverBoard.swift in Sources */,
 				DC04A1612306C78700A0DB77 /* Board.swift in Sources */,
 				DC04A15D2306C78700A0DB77 /* BoardHandler.swift in Sources */,
+				DC04A1C7230A8BE000A0DB77 /* PairInduction.swift in Sources */,
 				DC04A16E2306C78700A0DB77 /* SelectLevelScene.swift in Sources */,
+				DC04A1C0230A8BC600A0DB77 /* BoardCell.swift in Sources */,
+				DC04A1CE230A8BE000A0DB77 /* TwoPairsWIthNumberBetween.swift in Sources */,
+				DC04A1CB230A8BE000A0DB77 /* ShadeCornerWithPairs.swift in Sources */,
 				DC04A16C2306C78700A0DB77 /* SelectDifficultyScene.swift in Sources */,
 				DC04A1622306C78700A0DB77 /* BoardGenerator.swift in Sources */,
 				DC04A16A2306C78700A0DB77 /* NumberView.swift in Sources */,
+				DC04A1C4230A8BD700A0DB77 /* LookForwardToAvoidPartition.swift in Sources */,
 				DC04A1692306C78700A0DB77 /* Number.swift in Sources */,
 				DC04A1762306C78C00A0DB77 /* GameViewController.swift in Sources */,
+				DC04A1C3230A8BD400A0DB77 /* PairInCorner.swift in Sources */,
 				DC04A1642306C78700A0DB77 /* BoardView.swift in Sources */,
+				DC04A1C1230A8BCC00A0DB77 /* LonelyChecker.swift in Sources */,
+				DC04A1C8230A8BE000A0DB77 /* ShadingInRowsColumns.swift in Sources */,
 				DC04A15F2306C78700A0DB77 /* AbstractSolverBoard.swift in Sources */,
 				DC04A1652306C78700A0DB77 /* BruteForceSolverBoard.swift in Sources */,
+				DC04A1CC230A8BE000A0DB77 /* TwoPairsInCorner.swift in Sources */,
+				DC04A1CF230A8BE000A0DB77 /* PairAndCrossedPair.swift in Sources */,
 				DC04A1602306C78700A0DB77 /* Array2D.swift in Sources */,
+				DC04A1C2230A8BD000A0DB77 /* RelevantUnselect.swift in Sources */,
+				DC04A1C9230A8BE000A0DB77 /* UnshadeAroundShaded.swift in Sources */,
+				DC04A1CA230A8BE000A0DB77 /* UnshadeToAvoidPartition.swift in Sources */,
+				DC04A1C6230A8BE000A0DB77 /* SquareBetweenPair.swift in Sources */,
 				DC04A1732306C78700A0DB77 /* SKScene+Localization.swift in Sources */,
 				DC04A1742306C78700A0DB77 /* HitoriRepository.swift in Sources */,
 				DC04A1682306C78700A0DB77 /* GameDelegate.swift in Sources */,
