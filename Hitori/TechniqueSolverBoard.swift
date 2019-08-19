@@ -27,15 +27,20 @@ class TechniqueSolverBoard : AbstractSolverBoard {
         }
     }
 
-    func solve(techniques: [SolverTechnique]) -> Bool {
+    func solve(techniques: [SolverTechnique], steps: Int? = nil) -> Bool {
         var makesProgress = true
+        var solveSteps = 0
         while makesProgress {
             makesProgress = false
             for t in techniques {
                 if solve(technique: t) {
+                    solveSteps = solveSteps + 1
                     makesProgress = true
                     break
                 }
+            }
+            if steps != nil && steps! <= solveSteps {
+                makesProgress = false
             }
         }
         for i in 0..<(size*size) {

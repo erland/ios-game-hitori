@@ -26,6 +26,7 @@ class SingleGameScene: SKScene, BoardObserver, SolverObserver {
     var timeCounter : Int = 0
     var record : Int?
     var hints = 0
+    var readyForInput = true
 
     override func sceneDidLoad() {
         localize()
@@ -116,8 +117,10 @@ class SingleGameScene: SKScene, BoardObserver, SolverObserver {
         boardView?.clearSolverCells()
         hintName?.isHidden = true
         if boardView!.contains(position) {
-            if let cellPos = boardView?.cellForLocation(position: position) {
-                boardView?.board?.switchState(x: cellPos.x, y: cellPos.y)
+            if readyForInput {
+                if let cellPos = boardView?.cellForLocation(position: position) {
+                    boardView?.board?.switchState(x: cellPos.x, y: cellPos.y)
+                }
             }
         }else if quitButton!.contains(position) {
             gameDelegate?.gameComplete(playerName: boardView!.board!.name, board: boardView!.board!, seconds: timeCounter, hints: hints)
@@ -138,6 +141,7 @@ class SingleGameScene: SKScene, BoardObserver, SolverObserver {
     }
 
     func showHint() {
+        readyForInput = false
         boardView?.clearSolverCells()
         let boardString = boardView!.board!.asString()
         let solver = TechniqueSolverBoard(boardString: boardString, debug: false)
@@ -152,57 +156,71 @@ class SingleGameScene: SKScene, BoardObserver, SolverObserver {
             }
         }
         solver.attachObserver(self)
-        hints = hints + 1
         hintName?.isHidden = false
-        hintName?.fontColor = SKColor.green
+        hintName?.fontColor = SKColor.gray
+        hintName?.text = NSLocalizedString("hintSearching", comment: "Searching for hint")
         
-        if solver.solve(technique: AdjacentTriplets()) {
-            print("Showed solution with Adjacent Triples")
-            hintName?.text = NSLocalizedString("hintAdjacentTriplets", comment: "Adjacent Triples")
-        }else if solver.solve(technique: SquareBetweenPair()) {
-            print("Showed solution with Square Between Pair")
-            hintName?.text = NSLocalizedString("hintSquareBetweenPair", comment: "Square Between Pair")
-        }else if solver.solve(technique: PairInduction()) {
-            print("Showed solution with Pair Induction")
-            hintName?.text = NSLocalizedString("hintPairInduction", comment: "Pair Induction")
-        }else if solver.solve(technique: ShadingInRowsColumns()) {
-            print("Showed solution with Shading In Rows Columns")
-            hintName?.text = NSLocalizedString("hintShadingInRowsColumns", comment: "Shading In Rows Columns")
-        }else if solver.solve(technique: UnshadeAroundShaded()) {
-            print("Showed solution with Unshade Around Shaded")
-            hintName?.text = NSLocalizedString("hintUnshadeAroundShaded", comment: "Unshade Around Shaded")
-        }else if solver.solve(technique: UnshadeToAvoidPartition()) {
-            print("Showed solution with Unshade To Avoid Partition")
-            hintName?.text = NSLocalizedString("hintUnshadeToAvoidPartition", comment: "Unshade To Avoid Partition")
-        }else if solver.solve(technique: ShadeCornerWithPairs()) {
-            print("Showed solution with Shade Corner With Pairs")
-            hintName?.text = NSLocalizedString("hintShadeCornerWithPairs", comment: "Shade Corner With Pairs")
-        }else if solver.solve(technique: PairInCorner()) {
-            print("Showed solution with Pair In Corner")
-            hintName?.text = NSLocalizedString("hintPairInCorner", comment: "Pair In Corner")
-        }else if solver.solve(technique: TwoPairsInCorner()) {
-            print("Showed solution with Two Pairs In Corner")
-            hintName?.text = NSLocalizedString("hintTwoPairsInCorner", comment: "Two Pairs In Corner")
-        }else if solver.solve(technique: TwoPairsAtBorder()) {
-            print("Showed solution with Two Pairs At Border")
-            hintName?.text = NSLocalizedString("hintTwoPairsAtBorder", comment: "Two Pairs At Border")
-        }else if solver.solve(technique: PairAndCrossedPair()) {
-            print("Showed solution with Pair And Crossed Pair")
-            hintName?.text = NSLocalizedString("hintPairAndCrossedPair", comment: "Two Pairs And Crossed Pair")
-        }else if solver.solve(technique: TwoPairsWithNumberBetween()) {
-            print("Showed solution with Two Pairs With Number Between")
-            hintName?.text = NSLocalizedString("hintTwoPairsWithNumberBetween", comment: "Two Pairs With Number Between")
-        }else if solver.solve(technique:
-            LookForwardToAvoidPartition(techniques: [
-                UnshadeAroundShaded(),
-                ShadingInRowsColumns(),
-                UnshadeToAvoidPartition()])) {
-            print("Showed solution with Look Forward To Avoid Partition")
-            hintName?.text = NSLocalizedString("hintLookForwardToAvoidPartition", comment: "Look Forward To Avoid Partition")
-        }else {
-            hints = hints - 1
-            hintName?.fontColor = Color.orange
-            hintName?.text = NSLocalizedString("noHintAvailable", comment: "noHintAvailable")
+        DispatchQueue.global().async {
+            if solver.solve(technique: AdjacentTriplets()) {
+                self.displayHint("AdjacentTriplets")
+            }else if solver.solve(technique: SquareBetweenPair()) {
+                self.displayHint("SquareBetweenPair")
+            }else if solver.solve(technique: PairInduction()) {
+                self.displayHint("PairInduction")
+            }else if solver.solve(technique: ShadingInRowsColumns()) {
+                self.displayHint("ShadingInRowsColumns")
+            }else if solver.solve(technique: UnshadeAroundShaded()) {
+                self.displayHint("UnshadeAroundShaded")
+            }else if solver.solve(technique: UnshadeToAvoidPartition()) {
+                self.displayHint("UnshadeToAvoidPartition")
+            }else if solver.solve(technique: ShadeCornerWithPairs()) {
+                self.displayHint("ShadeCornerWithPairs")
+            }else if solver.solve(technique: PairInCorner()) {
+                self.displayHint("PairInCorner")
+            }else if solver.solve(technique: TwoPairsInCorner()) {
+                self.displayHint("TwoPairsInCorner")
+            }else if solver.solve(technique: TwoPairsAtBorder()) {
+                self.displayHint("TwoPairsAtBorder")
+            }else if solver.solve(technique: PairAndCrossedPair()) {
+                self.displayHint("PairAndCrossedPair")
+            }else if solver.solve(technique: TwoPairsWithNumberBetween()) {
+                self.displayHint("TwoPairsWithNumberBetween")
+            }else if solver.solve(technique:
+                LookForwardToAvoidPartition(techniques: [
+                    UnshadeAroundShaded(),
+                    ShadingInRowsColumns(),
+                    UnshadeToAvoidPartition()], steps: 2)) {
+                self.displayHint("LookForwardToAvoidPartitionClose")
+            }else if solver.solve(technique:
+                LookForwardToAvoidPartition(techniques: [
+                    UnshadeAroundShaded(),
+                    ShadingInRowsColumns(),
+                    UnshadeToAvoidPartition()], steps: 6)) {
+                self.displayHint("LookForwardToAvoidPartitionSoon")
+            }else if solver.solve(technique:
+                LookForwardToAvoidPartition(techniques: [
+                    UnshadeAroundShaded(),
+                    ShadingInRowsColumns(),
+                    UnshadeToAvoidPartition()])) {
+                self.displayHint("LookForwardToAvoidPartitionUnlimited")
+            }else {
+                self.displayHint(nil)
+            }
+        }
+    }
+    
+    func displayHint(_ hintKey: String?) {
+        DispatchQueue.main.async {
+            if hintKey != nil {
+                self.hints = self.hints + 1
+                self.hintName?.fontColor = Color.green
+                print("Showing hint for \(hintKey!)")
+                self.hintName?.text = NSLocalizedString("hint"+hintKey!, comment: hintKey!)
+            }else {
+                self.hintName?.fontColor = Color.orange
+                self.hintName?.text = NSLocalizedString("noHintAvailable", comment: "noHintAvailable")
+            }
+            self.readyForInput = true
         }
     }
     

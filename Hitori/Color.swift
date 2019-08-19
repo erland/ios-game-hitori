@@ -17,6 +17,7 @@ class Color {
     static let black = UIColor.black
     static let darkGray = UIColor.darkGray
     static let white = UIColor.white
+    static let green = UIColor.green
     static let lightYellow = UIColor(red:1.0, green:1.0, blue:0.8, alpha: 1.0)
     #elseif os(OSX)
     static let orange = NSColor.orange
@@ -25,6 +26,7 @@ class Color {
     static let black = NSColor.black
     static let darkGray = NSColor.darkGray
     static let white = NSColor.white
+    static let green = NSColor.green
     static let lightYellow = NSColor(red:1.0, green:1.0, blue:0.8, alpha: 1.0)
     #endif
 }

@@ -16,67 +16,83 @@ class TwoPairsAtBorder : SolverTechnique {
         }
         if y<=1 {
             if isDoubleRowPair(board: board, x1: x-1, x2: x-2, y: 0) {
-                unselect(board: board, x: x, y: 0)
-                unselect(board: board, x: x, y: 1)
-                unselect(board: board, x: x-3, y: 0)
-                unselect(board: board, x: x-3, y: 1)
-                return true
+                var cells = RelevantUnselect(board: board).unselect(x,0)
+                cells = cells + RelevantUnselect(board: board).unselect(x,1)
+                cells = cells + RelevantUnselect(board: board).unselect(x-3,0)
+                cells = cells + RelevantUnselect(board: board).unselect(x-3,1)
+                if cells>0 {
+                    return true
+                }
             }
             if isDoubleRowPair(board: board, x1: x+1, x2: x+2, y: 0) {
-                unselect(board: board, x: x, y: 0)
-                unselect(board: board, x: x, y: 1)
-                unselect(board: board, x: x+3, y: 0)
-                unselect(board: board, x: x+3, y: 1)
-                return true
+                var cells = RelevantUnselect(board: board).unselect(x,0)
+                cells = cells + RelevantUnselect(board: board).unselect(x,1)
+                cells = cells + RelevantUnselect(board: board).unselect(x+3,0)
+                cells = cells + RelevantUnselect(board: board).unselect(x+3,1)
+                if cells>0 {
+                    return true
+                }
             }
         }
         if y>=board.sizeOfBoard()-2 {
             if isDoubleRowPair(board: board, x1: x-1, x2: x-2, y: board.sizeOfBoard()-1) {
-                unselect(board: board, x: x, y: board.sizeOfBoard()-1)
-                unselect(board: board, x: x, y: board.sizeOfBoard()-2)
-                unselect(board: board, x: x-3, y: board.sizeOfBoard()-1)
-                unselect(board: board, x: x-3, y: board.sizeOfBoard()-2)
-                return true
+                var cells = RelevantUnselect(board: board).unselect(x,board.sizeOfBoard()-1)
+                cells = cells + RelevantUnselect(board: board).unselect(x,board.sizeOfBoard()-2)
+                cells = cells + RelevantUnselect(board: board).unselect(x-3,board.sizeOfBoard()-1)
+                cells = cells + RelevantUnselect(board: board).unselect(x-3,board.sizeOfBoard()-2)
+                if cells>0 {
+                    return true
+                }
             }
             if isDoubleRowPair(board: board, x1: x+1, x2: x+2, y: board.sizeOfBoard()-1) {
-                unselect(board: board, x: x, y: board.sizeOfBoard()-1)
-                unselect(board: board, x: x, y: board.sizeOfBoard()-2)
-                unselect(board: board, x: x+3, y: board.sizeOfBoard()-1)
-                unselect(board: board, x: x+3, y: board.sizeOfBoard()-2)
-                return true
+                var cells = RelevantUnselect(board: board).unselect(x,board.sizeOfBoard()-1)
+                cells = cells + RelevantUnselect(board: board).unselect(x,board.sizeOfBoard()-2)
+                cells = cells + RelevantUnselect(board: board).unselect(x+3,board.sizeOfBoard()-1)
+                cells = cells + RelevantUnselect(board: board).unselect(x+3,board.sizeOfBoard()-2)
+                if cells>0 {
+                    return true
+                }
             }
         }
 
         if x<=1 {
             if isDoubleColumnPair(board: board, x: 0, y1: y-1, y2: y-2) {
-                unselect(board: board, x: 0, y: y)
-                unselect(board: board, x: 1, y: y)
-                unselect(board: board, x: 0, y: y-3)
-                unselect(board: board, x: 1, y: y-3)
-                return true
+                var cells = RelevantUnselect(board: board).unselect(0,y)
+                cells = cells + RelevantUnselect(board: board).unselect(1,y)
+                cells = cells + RelevantUnselect(board: board).unselect(0,y-3)
+                cells = cells + RelevantUnselect(board: board).unselect(1,y-3)
+                if cells>0 {
+                    return true
+                }
             }
             if isDoubleColumnPair(board: board, x: 0, y1: y+1, y2: y+2) {
-                unselect(board: board, x: 0, y: y)
-                unselect(board: board, x: 1, y: y)
-                unselect(board: board, x: 0, y: y+3)
-                unselect(board: board, x: 1, y: y+3)
-                return true
+                var cells = RelevantUnselect(board: board).unselect(0,y)
+                cells = cells + RelevantUnselect(board: board).unselect(1,y)
+                cells = cells + RelevantUnselect(board: board).unselect(0,y+3)
+                cells = cells + RelevantUnselect(board: board).unselect(1,y+3)
+                if cells>0 {
+                    return true
+                }
             }
         }
         if x>=board.sizeOfBoard()-2 {
             if isDoubleColumnPair(board: board, x: board.sizeOfBoard()-1, y1: y-1, y2: y-2) {
-                unselect(board: board, x: board.sizeOfBoard()-1, y: y)
-                unselect(board: board, x: board.sizeOfBoard()-2, y: y)
-                unselect(board: board, x: board.sizeOfBoard()-1, y: y-3)
-                unselect(board: board, x: board.sizeOfBoard()-2, y: y-3)
-                return true
+                var cells = RelevantUnselect(board: board).unselect(board.sizeOfBoard()-1,y)
+                cells = cells + RelevantUnselect(board: board).unselect(board.sizeOfBoard()-2,y)
+                cells = cells + RelevantUnselect(board: board).unselect(board.sizeOfBoard()-1,y-3)
+                cells = cells + RelevantUnselect(board: board).unselect(board.sizeOfBoard()-2,y-3)
+                if cells>0 {
+                    return true
+                }
             }
             if isDoubleColumnPair(board: board, x: board.sizeOfBoard()-1, y1: y+1, y2: y+2) {
-                unselect(board: board, x: board.sizeOfBoard()-1, y: y)
-                unselect(board: board, x: board.sizeOfBoard()-2, y: y)
-                unselect(board: board, x: board.sizeOfBoard()-1, y: y+3)
-                unselect(board: board, x: board.sizeOfBoard()-2, y: y+3)
-                return true
+                var cells = RelevantUnselect(board: board).unselect(board.sizeOfBoard()-1,y)
+                cells = cells + RelevantUnselect(board: board).unselect(board.sizeOfBoard()-2,y)
+                cells = cells + RelevantUnselect(board: board).unselect(board.sizeOfBoard()-1,y+3)
+                cells = cells + RelevantUnselect(board: board).unselect(board.sizeOfBoard()-2,y+3)
+                if cells>0 {
+                    return true
+                }
             }
         }
 

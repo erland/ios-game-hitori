@@ -24,8 +24,8 @@ class TwoPairsAtBorderTest: XCTestCase {
             "12245",
             "23351",
             "34512",
-            "45123",
-            "51234"
+            "15143",
+            "21254"
         ]
         let selections = [
             "_____",
@@ -42,8 +42,8 @@ class TwoPairsAtBorderTest: XCTestCase {
 
 func test_Bottom_Horizontal() {
     let numbers = [
-        "12345",
-        "23451",
+        "15343",
+        "21454",
         "34512",
         "45113",
         "51224"
@@ -63,10 +63,10 @@ func test_Bottom_Horizontal() {
     func test_Left_Vertical() {
         let numbers = [
             "12345",
-            "23451",
+            "23231",
             "35512",
             "35123",
-            "51234"
+            "51514"
         ]
         let selections = [
             "_____",
@@ -83,10 +83,10 @@ func test_Bottom_Horizontal() {
     
     func test_Right_Vertical() {
         let numbers = [
-            "12345",
+            "14545",
             "23412",
             "34512",
-            "45123",
+            "42323",
             "51234"
         ]
         let selections = [

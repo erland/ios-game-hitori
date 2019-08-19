@@ -16,8 +16,8 @@ class TwoPairsInCorner : SolverTechnique {
                 
                 select(board: board, x: 0,y: 0)
                 select(board: board, x: 1,y: 1)
-                unselect(board: board, x: 0,y: 1)
-                unselect(board: board, x: 1,y: 0)
+                _ = RelevantUnselect(board: board).unselect(0,1)
+                _ = RelevantUnselect(board: board).unselect(1,0)
                 return true
             }
         }
@@ -27,8 +27,8 @@ class TwoPairsInCorner : SolverTechnique {
                 
                 select(board: board, x: 0,y: board.sizeOfBoard()-1)
                 select(board: board, x: 1,y: board.sizeOfBoard()-2)
-                unselect(board: board, x: 0,y: board.sizeOfBoard()-2)
-                unselect(board: board, x: 1,y: board.sizeOfBoard()-1)
+                _ = RelevantUnselect(board: board).unselect(0,board.sizeOfBoard()-2)
+                _ = RelevantUnselect(board: board).unselect(1,board.sizeOfBoard()-1)
                 return true
             }
         }
@@ -38,8 +38,8 @@ class TwoPairsInCorner : SolverTechnique {
                 
                 select(board: board, x: board.sizeOfBoard()-1,y: 0)
                 select(board: board, x: board.sizeOfBoard()-2,y: 1)
-                unselect(board: board, x: board.sizeOfBoard()-1,y: 1)
-                unselect(board: board, x: board.sizeOfBoard()-2,y: 0)
+                _ = RelevantUnselect(board: board).unselect(board.sizeOfBoard()-1,1)
+                _ = RelevantUnselect(board: board).unselect(board.sizeOfBoard()-2,0)
                 return true
             }
         }
@@ -49,8 +49,8 @@ class TwoPairsInCorner : SolverTechnique {
                 
                 select(board: board, x: board.sizeOfBoard()-1,y: board.sizeOfBoard()-1)
                 select(board: board, x: board.sizeOfBoard()-2,y: board.sizeOfBoard()-2)
-                unselect(board: board, x: board.sizeOfBoard()-1,y: board.sizeOfBoard()-2)
-                unselect(board: board, x: board.sizeOfBoard()-2,y: board.sizeOfBoard()-1)
+                _ = RelevantUnselect(board: board).unselect(board.sizeOfBoard()-1,board.sizeOfBoard()-2)
+                _ = RelevantUnselect(board: board).unselect(board.sizeOfBoard()-2,board.sizeOfBoard()-1)
                 return true
             }
         }
@@ -88,13 +88,6 @@ class TwoPairsInCorner : SolverTechnique {
         let n = board.valueAt(x, y)!
         if n.selected == nil {
             board.select(x, y)
-        }
-    }
-
-    func unselect(board: BoardHandler, x: Int, y: Int) {
-        let n = board.valueAt(x, y)!
-        if n.selected == nil {
-            board.unselect(x, y)
         }
     }
 }

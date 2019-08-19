@@ -18,51 +18,42 @@ class UnshadeAroundShaded : SolverTechnique {
 
         
         if left != nil && left!.selected != nil && left!.selected! {
-            unselect(board: board, x: x, y: y)
-            unselect(board: board, x: x-2, y: y)
-            unselect(board: board, x: x-1, y: y-1)
-            unselect(board: board, x: x-1, y: y+1)
-            return true
+            var cells = RelevantUnselect(board: board).unselect(x,y)
+            cells = cells + RelevantUnselect(board: board).unselect(x-2,y)
+            cells = cells + RelevantUnselect(board: board).unselect(x-1,y-1)
+            cells = cells + RelevantUnselect(board: board).unselect(x-1,y+1)
+            if cells>0 {
+                return true
+            }
         }
         if right != nil && right!.selected != nil && right!.selected! {
-            unselect(board: board, x: x, y: y)
-            unselect(board: board, x: x+2, y: y)
-            unselect(board: board, x: x+1, y: y-1)
-            unselect(board: board, x: x+1, y: y+1)
-            return true
+            var cells = RelevantUnselect(board: board).unselect(x,y)
+            cells = cells + RelevantUnselect(board: board).unselect(x+2,y)
+            cells = cells + RelevantUnselect(board: board).unselect(x+1,y-1)
+            cells = cells + RelevantUnselect(board: board).unselect(x+1,y+1)
+            if cells>0 {
+                return true
+            }
         }
         if above != nil && above!.selected != nil && above!.selected! {
-            unselect(board: board, x: x, y: y)
-            unselect(board: board, x: x, y: y-2)
-            unselect(board: board, x: x-1, y: y-1)
-            unselect(board: board, x: x+1, y: y-1)
-            return true
+            var cells = RelevantUnselect(board: board).unselect(x,y)
+            cells = cells + RelevantUnselect(board: board).unselect(x,y-2)
+            cells = cells + RelevantUnselect(board: board).unselect(x-1,y-1)
+            cells = cells + RelevantUnselect(board: board).unselect(x+1,y-1)
+            if cells>0 {
+                return true
+            }
         }
         if below != nil && below!.selected != nil && below!.selected! {
-            unselect(board: board, x: x, y: y)
-            unselect(board: board, x: x, y: y+2)
-            unselect(board: board, x: x-1, y: y+1)
-            unselect(board: board, x: x+1, y: y+1)
-            return true
+            var cells = RelevantUnselect(board: board).unselect(x,y)
+            cells = cells + RelevantUnselect(board: board).unselect(x,y+2)
+            cells = cells + RelevantUnselect(board: board).unselect(x-1,y+1)
+            cells = cells + RelevantUnselect(board: board).unselect(x+1,y+1)
+            if cells>0 {
+                return true
+            }
         }
 
         return false
     }
-    
-    func select(board: BoardHandler, x: Int, y: Int) {
-        if let n = board.valueAt(x, y) {
-            if n.selected == nil {
-                board.select(x, y)
-            }
-        }
-    }
-    
-    func unselect(board: BoardHandler, x: Int, y: Int) {
-        if let n = board.valueAt(x, y) {
-            if n.selected == nil {
-                board.unselect(x, y)
-            }
-        }
-    }
-
 }

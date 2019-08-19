@@ -52,10 +52,12 @@ class BoardGenerator : BruteForceSolverBoard {
     }
     
     func generateFilledBoard() -> String? {
-        var boardString = ""
-        for _ in 0..<(size*size) {
-            boardString = boardString + "_"
+        var boardString = "1234523451345124512351234"
+        /*
+        for _ in 0..<(size) {
+            boardString = boardString + "\(Int.random(in: 1...size))"
         }
+ */
         initializeBoard(boardString: boardString)
         _ = solve()
         if solutions.count>0 {

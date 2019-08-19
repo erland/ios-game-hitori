@@ -38,23 +38,24 @@ class BruteForceSolverBoard : AbstractSolverBoard {
             currentY = currentY + 1
             // If last number on board
             if currentY == size {
-                solutions.append(asString())
+                solutions.append(solutionAsString())
                 return true
             }
         }
         
         // If number already exists at this position
-        let currentCell = valueAt(currentX, currentY)
-        if currentCell != nil && currentCell!.selected != nil {
+        let currentCell = valueAt(currentX, currentY)!
+        if currentCell.selected != nil {
             // Goto next position
             return solve(currentX+1,currentY)
         }
         
         var solved = false
         
-        for value in (1...size).shuffled() {
-            let cellValue = BoardCell(number: value, selected: true)
-            if isValid(x: currentX, y: currentY, value: cellValue) {
+        let boardValue = valueAt(currentX, currentY)!
+        for status in [false, true] {
+            if isValid(x: currentX, y: currentY, selected: status) {
+                let cellValue = BoardCell(number: boardValue.number, selected: status)
                 setValue(x: currentX, y: currentY, value: cellValue, present: true)
                 if solve(currentX+1, currentY) {
                     solved = true
@@ -62,23 +63,11 @@ class BruteForceSolverBoard : AbstractSolverBoard {
                         return true
                     }
                 }
-                setValue(x: currentX, y: currentY, value: cellValue, present: false)
-            }else {
-                cellValue.selected = false
-                if isValid(x: currentX, y: currentY, value: cellValue) {
-                    setValue(x: currentX, y: currentY, value: cellValue, present: true)
-                    if solve(currentX+1, currentY) {
-                        solved = true
-                        if solutions.count>1 {
-                            return true
-                        }
-                    }
-                    setValue(x: currentX, y: currentY, value: cellValue, present: false)
-                }
+                setValue(x: currentX, y: currentY, value: boardValue, present: true)
             }
         }
         
-        board[y*size+x] = nil
+        setValue(x: currentX, y: currentY, value: boardValue, present: true)
         return solved
     }
 }

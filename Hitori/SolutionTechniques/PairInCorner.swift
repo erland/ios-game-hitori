@@ -13,75 +13,91 @@ class PairInCorner : SolverTechnique {
 
         if x==0 && y==1 {
             if isRowPair(board: board, x: 0, y: 0) {
-                unselect(board: board, x: x, y: y)
-                return true
+                if RelevantUnselect(board: board).unselect(x,y)>0 {
+                    return true
+                }
             }
             if isColumnPair(board: board, x: 1, y: 0) {
-                unselect(board: board, x: x, y: y)
-                return true
+                if RelevantUnselect(board: board).unselect(x,y)>0 {
+                    return true
+                }
             }
         }else if x==1 && y==0 {
             if isRowPair(board: board, x: 0, y: 1) {
-                unselect(board: board, x: x, y: y)
-                return true
+                if RelevantUnselect(board: board).unselect(x,y)>0 {
+                    return true
+                }
             }
             if isColumnPair(board: board, x: 0, y: 0) {
-                unselect(board: board, x: x, y: y)
-                return true
+                if RelevantUnselect(board: board).unselect(x,y)>0 {
+                    return true
+                }
             }
         }else if x==board.sizeOfBoard()-1 && y==1 {
             if isRowPair(board: board, x: board.sizeOfBoard()-1, y: 0) {
-                unselect(board: board, x: x, y: y)
-                return true
+                if RelevantUnselect(board: board).unselect(x,y)>0 {
+                    return true
+                }
             }
             if isColumnPair(board: board, x: board.sizeOfBoard()-2, y: 0) {
-                unselect(board: board, x: x, y: y)
-                return true
+                if RelevantUnselect(board: board).unselect(x,y)>0 {
+                    return true
+                }
             }
         }else if x==board.sizeOfBoard()-2 && y==0 {
             if isRowPair(board: board, x: board.sizeOfBoard()-1, y: 1) {
-                unselect(board: board, x: x, y: y)
-                return true
+                if RelevantUnselect(board: board).unselect(x,y)>0 {
+                    return true
+                }
             }
             if isColumnPair(board: board, x: board.sizeOfBoard()-1, y: 0) {
-                unselect(board: board, x: x, y: y)
-                return true
+                if RelevantUnselect(board: board).unselect(x,y)>0 {
+                    return true
+                }
             }
         }else if x==0 && y==board.sizeOfBoard()-2 {
             if isRowPair(board: board, x: 0, y: board.sizeOfBoard()-1) {
-                unselect(board: board, x: x, y: y)
-                return true
+                if RelevantUnselect(board: board).unselect(x,y)>0 {
+                    return true
+                }
             }
             if isColumnPair(board: board, x: 1, y: board.sizeOfBoard()-1) {
-                unselect(board: board, x: x, y: y)
-                return true
+                if RelevantUnselect(board: board).unselect(x,y)>0 {
+                    return true
+                }
             }
         }else if x==1 && y==board.sizeOfBoard()-1 {
             if isRowPair(board: board, x: 0, y: board.sizeOfBoard()-2) {
-                unselect(board: board, x: x, y: y)
-                return true
+                if RelevantUnselect(board: board).unselect(x,y)>0 {
+                    return true
+                }
             }
             if isColumnPair(board: board, x: 0, y: board.sizeOfBoard()-1) {
-                unselect(board: board, x: x, y: y)
-                return true
+                if RelevantUnselect(board: board).unselect(x,y)>0 {
+                    return true
+                }
             }
         }else if x==board.sizeOfBoard()-1 && y==board.sizeOfBoard()-2 {
             if isRowPair(board: board, x: board.sizeOfBoard()-1, y: board.sizeOfBoard()-1) {
-                unselect(board: board, x: x, y: y)
-                return true
+                if RelevantUnselect(board: board).unselect(x,y)>0 {
+                    return true
+                }
             }
             if isColumnPair(board: board, x: board.sizeOfBoard()-2, y: board.sizeOfBoard()-1) {
-                unselect(board: board, x: x, y: y)
-                return true
+                if RelevantUnselect(board: board).unselect(x,y)>0 {
+                    return true
+                }
             }
         }else if x==board.sizeOfBoard()-2 && y==board.sizeOfBoard()-1 {
             if isRowPair(board: board, x: board.sizeOfBoard()-1, y: board.sizeOfBoard()-2) {
-                unselect(board: board, x: x, y: y)
-                return true
+                if RelevantUnselect(board: board).unselect(x,y)>0 {
+                    return true
+                }
             }
             if isColumnPair(board: board, x: board.sizeOfBoard()-1, y: board.sizeOfBoard()-1) {
-                unselect(board: board, x: x, y: y)
-                return true
+                if RelevantUnselect(board: board).unselect(x,y)>0 {
+                    return true
+                }
             }
         }
         return false
@@ -113,20 +129,5 @@ class PairInCorner : SolverTechnique {
             }
         }
         return false
-    }
-    func select(board: BoardHandler, x: Int, y: Int) {
-        let n = board.valueAt(x, y)!
-        if n.selected == nil {
-            n.selected = true
-            board.setValue(x: x, y: y, value: n, present: true)
-        }
-    }
-    
-    func unselect(board: BoardHandler, x: Int, y: Int) {
-        let n = board.valueAt(x, y)!
-        if n.selected == nil {
-            n.selected = false
-            board.setValue(x: x, y: y, value: n, present: true)
-        }
     }
 }

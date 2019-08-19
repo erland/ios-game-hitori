@@ -19,41 +19,64 @@ class UnshadeToAvoidPartitionTests: XCTestCase {
         // Put teardown code here. This method is called after the invocation of each test method in the class.
     }
 
-    func test_OpeningOnLeft() {
+    func test_Negative_OpeningOnLeft_WithNoDirectEffect() {
         let numbers = [
-            "12345",
-            "23451",
-            "34512",
-            "45123",
-            "51234"
+            "1 2 3 4 5",
+            "2 3 4 5 1",
+            "3 4 5 1 2",
+            "4 5 1 2 3",
+            "5 1 2 3 4"
         ]
         let selections = [
-            "__X__",
-            "_X_X_",
-            "_____",
-            "_X_X_",
-            "__X__"
+            "_ _ X _ _",
+            "_ X _ X _",
+            "_ _ _ _ _",
+            "_ X _ X _",
+            "_ _ X _ _"
+        ]
+        
+        let board = AbstractSolverBoard(boardString: numbers.joined())
+        board.initializeSelections(selectionString: selections.joined())
+        XCTAssert(!UnshadeToAvoidPartition().solvePosition(board: board, x: 4, y: 2))
+        
+    }
+
+    func test_OpeningOnLeft() {
+        let numbers = [
+            "1 2 3 4 5",
+            "2 3 4 5 1",
+            "3 4 5 1 2",
+            "4 5 1 2 3",
+            "5 1 2 3 2"
+        ]
+        let selections = [
+            "_ _ X _ _",
+            "_ X _ X _",
+            "_ _ _ _ _",
+            "_ X _ X _",
+            "_ _ X _ _"
         ]
         
         let board = AbstractSolverBoard(boardString: numbers.joined())
         board.initializeSelections(selectionString: selections.joined())
         XCTAssert(UnshadeToAvoidPartition().solvePosition(board: board, x: 4, y: 2))
+        
     }
 
     func test_OpeningOnRight() {
         let numbers = [
-            "12345",
-            "23451",
-            "34512",
-            "45123",
-            "51234"
+            "1 2 3 4 5",
+            "2 3 4 5 1",
+            "3 4 5 1 3",
+            "4 5 1 2 3",
+            "5 1 2 3 4"
         ]
         let selections = [
-            "__X__",
-            "_X_X_",
-            "_____",
-            "_X_X_",
-            "__X__"
+            "_ _ X _ _",
+            "_ X _ X _",
+            "_ _ _ _ _",
+            "_ X _ X _",
+            "_ _ X _ _"
         ]
 
         let board = AbstractSolverBoard(boardString: numbers.joined())
@@ -63,18 +86,18 @@ class UnshadeToAvoidPartitionTests: XCTestCase {
 
     func test_OpeningOnTop() {
         let numbers = [
-            "12345",
-            "23451",
-            "34512",
-            "45123",
-            "51234"
+            "1 2 3 4 5",
+            "2 3 4 5 1",
+            "3 4 5 1 2",
+            "4 5 1 2 3",
+            "5 1 3 3 4"
         ]
         let selections = [
-            "_____",
-            "_X_X_",
-            "X___X",
-            "_X_X_",
-            "_____"
+            "_ _ _ _ _",
+            "_ X _ X _",
+            "X _ _ _ X",
+            "_ X _ X _",
+            "_ _ _ _ _"
         ]
         
         let board = AbstractSolverBoard(boardString: numbers.joined())
@@ -84,18 +107,18 @@ class UnshadeToAvoidPartitionTests: XCTestCase {
 
     func test_OpeningOnBottom() {
         let numbers = [
-            "12345",
-            "23451",
-            "34512",
-            "45123",
-            "51234"
+            "1 2 3 4 5",
+            "2 3 4 5 1",
+            "3 4 2 1 2",
+            "4 5 1 2 3",
+            "5 1 2 3 4"
         ]
         let selections = [
-            "_____",
-            "_X_X_",
-            "X___X",
-            "_X_X_",
-            "_____"
+            "_ _ _ _ _",
+            "_ X _ X _",
+            "X _ _ _ X",
+            "_ X _ X _",
+            "_ _ _ _ _"
         ]
         
         let board = AbstractSolverBoard(boardString: numbers.joined())
@@ -105,18 +128,18 @@ class UnshadeToAvoidPartitionTests: XCTestCase {
 
     func test_Negative_MultipleOpenings() {
         let numbers = [
-            "12345",
-            "23451",
-            "34512",
-            "45123",
-            "51234"
+            "1 2 3 4 5",
+            "2 3 4 5 1",
+            "3 4 2 1 2",
+            "4 5 1 2 3",
+            "5 1 2 3 4"
         ]
         let selections = [
-            "_____",
-            "_X_X_",
-            "_____",
-            "_X_X_",
-            "_____"
+            "_ _ _ _ _",
+            "_ X _ X _",
+            "_ _ _ _ _",
+            "_ X _ X _",
+            "_ _ _ _ _"
         ]
         
         let board = AbstractSolverBoard(boardString: numbers.joined())

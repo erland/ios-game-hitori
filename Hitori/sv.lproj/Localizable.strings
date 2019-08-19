@@ -26,6 +26,7 @@
 "rule2" = "Aldrig två svarta rutor bredvid varandra";
 "rule3" = "Alla ej svarta rutor måste forma ett fält";
 "rule4" = "";
+"hintSearching" = "Letar efter ledtråd...";
 "hintAdjacentTriplets" = "Three in a row";
 "hintSquareBetweenPair" = "Square between equal numbers";
 "hintPairInduction" = "Another pair on this row/column";
@@ -38,5 +39,7 @@
 "hintPairAndCrossedPair" = "Crossed pair on same row/column as pair";
 "hintTwoPairsWithNumberBetween" = "Related pairs force unshaded";
 "hintPairInCorner" = "Ensure single field due to pair close to corner";
-"hintLookForwardToAvoidPartition" = "Avoid multiple fields further on";
+"hintLookForwardToAvoidPartitionClose" = "Avoid multiple fields in next step";
+"hintLookForwardToAvoidPartitionSoon" = "Avoid multiple fields in near future";
+"hintLookForwardToAvoidPartitionUnlimited" = "Avoid multiple fields in distant future";
 

@@ -29,6 +29,7 @@
 "rule2" = "Never two black cells beside each other";
 "rule3" = "All non black cells must form a single area";
 "rule4" = "";
+"hintSearching" = "Searching for hint...";
 "hintAdjacentTriplets" = "Three in a row";
 "hintSquareBetweenPair" = "Square between equal numbers";
 "hintPairInduction" = "Another pair on this row/column";
@@ -41,5 +42,7 @@
 "hintPairAndCrossedPair" = "Crossed pair on same row/column as pair";
 "hintTwoPairsWithNumberBetween" = "Related pairs force unshaded";
 "hintPairInCorner" = "Ensure single field due to pair close to corner";
-"hintLookForwardToAvoidPartition" = "Avoid multiple fields further on";
+"hintLookForwardToAvoidPartitionClose" = "Avoid multiple fields in next step";
+"hintLookForwardToAvoidPartitionSoon" = "Avoid multiple fields in near future";
+"hintLookForwardToAvoidPartitionUnlimited" = "Avoid multiple fields in distant future";
 

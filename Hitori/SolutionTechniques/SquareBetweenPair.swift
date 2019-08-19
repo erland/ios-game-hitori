@@ -18,14 +18,17 @@ class SquareBetweenPair : SolverTechnique {
         
         if current.selected == nil {
             if left != nil && right != nil && left!.number == right!.number {
-                board.unselect(x, y)
-                return true
+                if RelevantUnselect(board: board).unselect(x,y)>0 {
+                    return true
+                }
             }
             if above != nil && below != nil && above!.number == below!.number {
-                board.unselect(x, y)
-                return true
+                if RelevantUnselect(board: board).unselect(x,y)>0 {
+                    return true
+                }
             }
         }
         return false
     }
+    
 }

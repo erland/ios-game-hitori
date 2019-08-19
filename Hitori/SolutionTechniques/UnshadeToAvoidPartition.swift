@@ -32,29 +32,33 @@ class UnshadeToAvoidPartition : SolverTechnique {
         if left != nil && (left!.selected == nil || !left!.selected!) {
             let field = traverseField(board: board, x: x-1, y: y, currentX: x, currentY: y, fieldPositions: [])
             if field.count<totallyUnshaded.count {
-                board.unselect(x, y)
-                return true
+                if RelevantUnselect(board: board).unselect(x,y)>0 {
+                    return true
+                }
             }
         }
         if right != nil && (right!.selected == nil || !right!.selected!) {
             let field = traverseField(board: board, x: x+1, y: y, currentX: x, currentY: y, fieldPositions: [])
             if field.count<totallyUnshaded.count {
-                board.unselect(x, y)
-                return true
+                if RelevantUnselect(board: board).unselect(x,y)>0 {
+                    return true
+                }
             }
         }
         if above != nil && (above!.selected == nil || !above!.selected!) {
             let field = traverseField(board: board, x: x, y: y-1, currentX: x, currentY: y, fieldPositions: [])
             if field.count<totallyUnshaded.count {
-                board.unselect(x, y)
-                return true
+                if RelevantUnselect(board: board).unselect(x,y)>0 {
+                    return true
+                }
             }
         }
         if below != nil && (below!.selected == nil || !below!.selected!) {
             let field = traverseField(board: board, x: x, y: y+1, currentX: x, currentY: y, fieldPositions: [])
             if field.count<totallyUnshaded.count {
-                board.unselect(x, y)
-                return true
+                if RelevantUnselect(board: board).unselect(x,y)>0 {
+                    return true
+                }
             }
         }
 
@@ -105,5 +109,4 @@ class UnshadeToAvoidPartition : SolverTechnique {
         return result
     }
 
-    
 }

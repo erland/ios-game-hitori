@@ -11,11 +11,12 @@ class AbstractSolverBoard : BoardHandler {
     var board: Array<BoardCell?>
     let debug: Bool
 
-    init(boardString: String, debug: Bool = true) {
+    init(boardString: String, debug: Bool = false) {
         self.debug = debug
-        size = AbstractSolverBoard.sizeOfBoard(boardString: boardString)
+        let numbers = boardString.replacingOccurrences(of: " ", with: "")
+        size = AbstractSolverBoard.sizeOfBoard(boardString: numbers)
         board = Array<BoardCell?>(repeating: nil, count:size * size)
-        initializeBoard(boardString: boardString)
+        initializeBoard(boardString: numbers)
     }
 
     func sizeOfBoard() -> Int {
@@ -39,14 +40,15 @@ class AbstractSolverBoard : BoardHandler {
     }
     
     func initializeBoard(boardString: String) {
-        size = AbstractSolverBoard.sizeOfBoard(boardString: boardString)
+        let numbers = boardString.replacingOccurrences(of: " ", with: "")
+        size = AbstractSolverBoard.sizeOfBoard(boardString: numbers)
         board = Array<BoardCell?>(repeating: nil, count:size * size)
         
         for y in 0..<size {
             for x in 0..<size {
                 let i = size*y+x
-                if boardString.count > i {
-                    let ch = boardString[boardString.index(boardString.startIndex, offsetBy: i)]
+                if numbers.count > i {
+                    let ch = numbers[numbers.index(numbers.startIndex, offsetBy: i)]
                     if let num = Int(String(ch)) {
                         setValue(x: x,y: y, value: BoardCell(number: num, selected: nil), present: true)
                     }
@@ -57,11 +59,12 @@ class AbstractSolverBoard : BoardHandler {
     }
 
     func initializeSelections(selectionString: String) {
+        let selections = selectionString.replacingOccurrences(of: " ", with: "")
         for y in 0..<size {
             for x in 0..<size {
                 let i = size*y+x
-                if selectionString.count > i {
-                    let ch = selectionString[selectionString.index(selectionString.startIndex, offsetBy: i)]
+                if selections.count > i {
+                    let ch = selections[selections.index(selections.startIndex, offsetBy: i)]
                     if ch == "X" {
                         select(x,y)
                     }else if ch == "?" {
@@ -73,11 +76,15 @@ class AbstractSolverBoard : BoardHandler {
         
     }
 
-    func asString() -> String {
+    func solutionAsString() -> String {
         var result = ""
         for i in 0..<(size*size) {
             if let number = board[i] {
-                result = result + "\(number.number)"
+                if number.selected != nil && number.selected! {
+                    result = result + "X"
+                }else {
+                    result = result + "_"
+                }
             }else {
                 result = result + "_"
             }
@@ -134,16 +141,18 @@ class AbstractSolverBoard : BoardHandler {
         }
     }
     
-    func isValid(x: Int, y: Int, value: BoardCell) -> Bool {
-        let old = valueAt(x,y)
-        board[y*size+x] = value
+    func isValid(x: Int, y: Int, selected: Bool) -> Bool {
+        let old = valueAt(x,y)?.selected
+        defer {
+            valueAt(x, y)?.selected = old
+        }
+        valueAt(x, y)?.selected = selected
         for y in 0..<size {
             var rowNumbers : [Int] = []
             for x in 0..<size {
                 if let n = valueAt(x,y) {
-                    if n.selected == nil || !n.selected! {
+                    if n.selected != nil && !n.selected! {
                         if rowNumbers.contains(n.number) {
-                            board[y*size+x] = old
                             return false
                         }
                         rowNumbers.append(n.number)
@@ -151,7 +160,6 @@ class AbstractSolverBoard : BoardHandler {
                     if n.selected != nil && n.selected! {
                         if let previous = valueAt(x-1,y) {
                             if previous.selected != nil && previous.selected! {
-                                board[y*size+x] = old
                                 return false
                             }
                         }
@@ -162,13 +170,16 @@ class AbstractSolverBoard : BoardHandler {
         var notSelectedPositions : [Int] = []
         var notSelectedX : Int?
         var notSelectedY : Int?
+        var checkPartition = false
+        if selected {
+            checkPartition = true
+        }
         for x in 0..<size {
             var columnNumbers : [Int] = []
             for y in 0..<size {
                 if let n = valueAt(x,y) {
-                    if n.selected==nil || !n.selected! {
+                    if n.selected != nil && !n.selected! {
                         if columnNumbers.contains(n.number) {
-                            board[y*size+x] = old
                             return false
                         }
                         columnNumbers.append(n.number)
@@ -176,41 +187,60 @@ class AbstractSolverBoard : BoardHandler {
                     if n.selected != nil && n.selected! {
                         if let previous = valueAt(x,y-1) {
                             if previous.selected != nil && previous.selected! {
-                                board[y*size+x] = old
                                 return false
                             }
                         }
                     }else {
+                        if checkPartition {
+                            notSelectedPositions.append(y*size+x)
+                            notSelectedX = x
+                            notSelectedY = y
+                        }
+                    }
+                }else {
+                    if checkPartition {
                         notSelectedPositions.append(y*size+x)
                         notSelectedX = x
                         notSelectedY = y
                     }
-                }else {
-                    notSelectedPositions.append(y*size+x)
-                    notSelectedX = x
-                    notSelectedY = y
                 }
             }
         }
         
-        let fieldPositions = traverseField(x: notSelectedX!, y: notSelectedY!, fieldPositions: [])
-        if fieldPositions.count != notSelectedPositions.count {
-            board[y*size+x] = old
-            return false
+        if checkPartition {
+            var nearByCells = 0
+            nearByCells = nearByCells + fieldBorderContribution(x-1,y-1)
+            nearByCells = nearByCells + fieldBorderContribution(x+1,y-1)
+            nearByCells = nearByCells + fieldBorderContribution(x-1,y+1)
+            nearByCells = nearByCells + fieldBorderContribution(x+1,y+1)
+            if nearByCells>=2 {
+                let fieldPositions = traverseField(x: notSelectedX!, y: notSelectedY!, fieldPositions: Set<Int>())
+                if fieldPositions.count != notSelectedPositions.count {
+                    return false
+                }
+            }
         }
         
-        board[y*size+x] = old
         return true
         
     }
     
-    private func traverseField(x: Int, y: Int, fieldPositions: [Int]) -> [Int] {
+    private func fieldBorderContribution(_ x: Int, _ y: Int) -> Int {
+        if let n = valueAt(x,y) {
+            if n.selected == nil || !n.selected! {
+                return 0
+            }
+        }
+        return 1
+    }
+    
+    private func traverseField(x: Int, y: Int, fieldPositions: Set<Int>) -> Set<Int> {
         var result = fieldPositions
         let n1 = valueAt(x-1,y)
         if x>0 && (n1 == nil || n1!.selected == nil || !n1!.selected!) {
             let pos = y*size+x-1
             if !result.contains(pos) {
-                result.append(pos)
+                result.insert(pos)
                 result = traverseField(x: x-1, y: y, fieldPositions: result)
             }
         }
@@ -219,7 +249,7 @@ class AbstractSolverBoard : BoardHandler {
         if x<size-1 && (n2 == nil || n2!.selected == nil || !n2!.selected!) {
             let pos = y*size+x+1
             if !result.contains(pos) {
-                result.append(pos)
+                result.insert(pos)
                 result = traverseField(x: x+1, y: y, fieldPositions: result)
             }
         }
@@ -228,7 +258,7 @@ class AbstractSolverBoard : BoardHandler {
         if y>0 && (n3 == nil || n3!.selected == nil || !n3!.selected!) {
             let pos = (y-1)*size+x
             if !result.contains(pos) {
-                result.append(pos)
+                result.insert(pos)
                 result = traverseField(x: x, y: y-1, fieldPositions: result)
             }
         }
@@ -237,7 +267,7 @@ class AbstractSolverBoard : BoardHandler {
         if y<size-1 && (n4 == nil || n4!.selected == nil || !n4!.selected!) {
             let pos = (y+1)*size+x
             if !result.contains(pos) {
-                result.append(pos)
+                result.insert(pos)
                 result = traverseField(x: x, y: y+1, fieldPositions: result)
             }
         }

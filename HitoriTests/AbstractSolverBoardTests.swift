@@ -23,8 +23,10 @@ class AbstractSolverBoardTests: XCTestCase {
         for x in 0..<board.size {
             for y in 0..<board.size {
                 if let value = board.valueAt(x, y) {
-                    if !board.isValid(x: x, y: y, value: value) {
-                        return false
+                    if let selected = value.selected {
+                        if !board.isValid(x: x, y: y, selected: selected) {
+                            return false
+                        }
                     }
                 }
             }
@@ -32,7 +34,7 @@ class AbstractSolverBoardTests: XCTestCase {
         return true
     }
     
-    func test_isValid() {
+    func test_isValid_Empty_Board() {
         let numbers = [
             "12345",
             "23451",
@@ -41,11 +43,11 @@ class AbstractSolverBoardTests: XCTestCase {
             "51234"
         ]
         let selections = [
-            "_____",
-            "_____",
-            "_____",
-            "_____",
-            "_____"
+            "?????",
+            "?????",
+            "?????",
+            "?????",
+            "?????"
         ]
         
         let board = AbstractSolverBoard(boardString: numbers.joined())
@@ -53,6 +55,69 @@ class AbstractSolverBoardTests: XCTestCase {
         XCTAssert(isValid(board))
     }
     
+    func test_isValid_Filled_With_Selected() {
+        let numbers = [
+            "33445",
+            "45132",
+            "34214",
+            "53541",
+            "52543"
+        ]
+        let selections = [
+            "_X_X_",
+            "_____",
+            "X___X",
+            "__X__",
+            "X__X_"
+        ]
+        
+        let board = AbstractSolverBoard(boardString: numbers.joined())
+        board.initializeSelections(selectionString: selections.joined())
+        XCTAssert(isValid(board))
+    }
+
+    func test_isValid_Filled_With_Selected_And_Unselected() {
+        let numbers = [
+            "33445",
+            "45132",
+            "34214",
+            "53541",
+            "52543"
+        ]
+        let selections = [
+            "?X?X?",
+            "?????",
+            "X???X",
+            "??X??",
+            "X??X?"
+        ]
+        
+        let board = AbstractSolverBoard(boardString: numbers.joined())
+        board.initializeSelections(selectionString: selections.joined())
+        XCTAssert(isValid(board))
+    }
+
+    func test_isValid_Filled_With_Unselected() {
+        let numbers = [
+            "33445",
+            "45132",
+            "34214",
+            "53541",
+            "52543"
+        ]
+        let selections = [
+            "?_?_?",
+            "?????",
+            "_???_",
+            "??_??",
+            "_??_?"
+        ]
+        
+        let board = AbstractSolverBoard(boardString: numbers.joined())
+        board.initializeSelections(selectionString: selections.joined())
+        XCTAssert(isValid(board))
+    }
+
     func test_isValid_Negative_PairInBeginningOfRow() {
         let numbers = [
             "11345",
@@ -62,11 +127,11 @@ class AbstractSolverBoardTests: XCTestCase {
             "51234"
         ]
         let selections = [
-            "_____",
-            "_____",
-            "_____",
-            "_____",
-            "_X___"
+            "?????",
+            "?????",
+            "?????",
+            "?????",
+            "?X???"
         ]
         
         let board = AbstractSolverBoard(boardString: numbers.joined())
@@ -83,11 +148,11 @@ class AbstractSolverBoardTests: XCTestCase {
             "51234"
         ]
         let selections = [
-            "_____",
-            "_____",
-            "_____",
-            "_____",
-            "____X"
+            "?????",
+            "?????",
+            "?????",
+            "?????",
+            "????X"
         ]
         
         let board = AbstractSolverBoard(boardString: numbers.joined())
@@ -104,11 +169,11 @@ class AbstractSolverBoardTests: XCTestCase {
             "51234"
         ]
         let selections = [
-            "_____",
-            "_____",
-            "_____",
-            "_____",
-            "__X__"
+            "?????",
+            "?????",
+            "?????",
+            "?????",
+            "??X??"
         ]
         
         let board = AbstractSolverBoard(boardString: numbers.joined())
@@ -125,11 +190,11 @@ class AbstractSolverBoardTests: XCTestCase {
             "51234"
         ]
         let selections = [
-            "_____",
-            "X____",
-            "_____",
-            "_____",
-            "_____"
+            "?????",
+            "X????",
+            "?????",
+            "?????",
+            "?????"
         ]
         
         let board = AbstractSolverBoard(boardString: numbers.joined())
@@ -146,11 +211,11 @@ class AbstractSolverBoardTests: XCTestCase {
             "51234"
         ]
         let selections = [
-            "_____",
-            "_____",
-            "_____",
-            "__X__",
-            "_____"
+            "?????",
+            "?????",
+            "?????",
+            "??X??",
+            "?????"
         ]
         
         let board = AbstractSolverBoard(boardString: numbers.joined())
@@ -167,11 +232,11 @@ class AbstractSolverBoardTests: XCTestCase {
             "51234"
         ]
         let selections = [
-            "_____",
-            "__X__",
-            "_____",
-            "_____",
-            "_____"
+            "?????",
+            "??X??",
+            "?????",
+            "?????",
+            "?????"
         ]
         
         let board = AbstractSolverBoard(boardString: numbers.joined())
@@ -188,11 +253,11 @@ class AbstractSolverBoardTests: XCTestCase {
             "51234"
         ]
         let selections = [
-            "_____",
-            "XX___",
-            "_____",
-            "_____",
-            "_____"
+            "?????",
+            "XX???",
+            "?????",
+            "?????",
+            "?????"
         ]
         
         let board = AbstractSolverBoard(boardString: numbers.joined())
@@ -209,11 +274,11 @@ class AbstractSolverBoardTests: XCTestCase {
             "51234"
         ]
         let selections = [
-            "_____",
-            "___XX",
-            "_____",
-            "_____",
-            "_____"
+            "?????",
+            "???XX",
+            "?????",
+            "?????",
+            "?????"
         ]
         
         let board = AbstractSolverBoard(boardString: numbers.joined())
@@ -230,11 +295,11 @@ class AbstractSolverBoardTests: XCTestCase {
             "51234"
         ]
         let selections = [
-            "_____",
-            "__XX_",
-            "_____",
-            "_____",
-            "_____"
+            "?????",
+            "??XX?",
+            "?????",
+            "?????",
+            "?????"
         ]
         
         let board = AbstractSolverBoard(boardString: numbers.joined())
@@ -251,11 +316,11 @@ class AbstractSolverBoardTests: XCTestCase {
             "51234"
         ]
         let selections = [
-            "_X___",
-            "_X___",
-            "_____",
-            "_____",
-            "_____"
+            "?X???",
+            "?X???",
+            "?????",
+            "?????",
+            "?????"
         ]
         
         let board = AbstractSolverBoard(boardString: numbers.joined())
@@ -272,11 +337,11 @@ class AbstractSolverBoardTests: XCTestCase {
             "51234"
         ]
         let selections = [
-            "_____",
-            "_____",
-            "_____",
-            "___X_",
-            "___X_"
+            "?????",
+            "?????",
+            "?????",
+            "???X?",
+            "???X?"
         ]
         
         let board = AbstractSolverBoard(boardString: numbers.joined())
@@ -293,11 +358,11 @@ class AbstractSolverBoardTests: XCTestCase {
             "51234"
         ]
         let selections = [
-            "_____",
-            "__X__",
-            "__X__",
-            "_____",
-            "_____"
+            "?????",
+            "??X??",
+            "??X??",
+            "?????",
+            "?????"
         ]
         
         let board = AbstractSolverBoard(boardString: numbers.joined())
@@ -314,11 +379,11 @@ class AbstractSolverBoardTests: XCTestCase {
             "51234"
         ]
         let selections = [
-            "__X__",
-            "_X___",
-            "X____",
-            "_____",
-            "_____"
+            "??X??",
+            "?X???",
+            "X????",
+            "?????",
+            "?????"
         ]
         
         let board = AbstractSolverBoard(boardString: numbers.joined())
@@ -335,11 +400,11 @@ class AbstractSolverBoardTests: XCTestCase {
             "51234"
         ]
         let selections = [
-            "__X__",
-            "_X_X_",
-            "X___X",
-            "_X_X_",
-            "__X__"
+            "??X??",
+            "?X?X?",
+            "X???X",
+            "?X?X?",
+            "??X??"
         ]
         
         let board = AbstractSolverBoard(boardString: numbers.joined())
@@ -356,11 +421,11 @@ class AbstractSolverBoardTests: XCTestCase {
             "51234"
         ]
         let selections = [
-            "__?__",
-            "_X_X_",
-            "X___X",
-            "_X_X_",
-            "__?__"
+            "?????",
+            "?X?X?",
+            "X???X",
+            "?X?X?",
+            "?????"
         ]
         
         let board = AbstractSolverBoard(boardString: numbers.joined())
@@ -377,11 +442,11 @@ class AbstractSolverBoardTests: XCTestCase {
             "51234"
         ]
         let selections = [
-            "__X__",
-            "_X_X_",
-            "?___?",
-            "_X_X_",
-            "__X__"
+            "??X??",
+            "?X?X?",
+            "?????",
+            "?X?X?",
+            "??X??"
         ]
         
         let board = AbstractSolverBoard(boardString: numbers.joined())

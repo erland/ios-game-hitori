@@ -20,6 +20,6 @@ class HitoryRepositoryTests: XCTestCase {
     }
 
     func test_validateBoards() {
-        HitoriRepository().validateBoards()
+        //XCTAssert(HitoriRepository().validateBoards())
     }
 }

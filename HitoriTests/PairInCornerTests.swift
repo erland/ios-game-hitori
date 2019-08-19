@@ -25,7 +25,7 @@ class PairInCornerTests: XCTestCase {
             "23451",
             "34512",
             "45123",
-            "51234"
+            "21234"
         ]
         let selections = [
             "_____",
@@ -41,13 +41,34 @@ class PairInCornerTests: XCTestCase {
         XCTAssert(!(board.valueAt(0,1)?.selected ?? true))
     }
 
+    func test_Negative_TopLeft_PairUpperRow_WithNoEffect() {
+        let numbers = [
+            "11345",
+            "23451",
+            "34512",
+            "45123",
+            "51234"
+        ]
+        let selections = [
+            "_____",
+            "_____",
+            "_____",
+            "_____",
+            "_____"
+        ]
+        
+        let board = AbstractSolverBoard(boardString: numbers.joined())
+        board.initializeSelections(selectionString: selections.joined())
+        XCTAssert(!PairInCorner().solvePosition(board: board, x: 0, y: 1))
+    }
+
     func test_TopLeft_PairLowerRow() {
         let numbers = [
             "12345",
             "33451",
             "34512",
             "45123",
-            "51234"
+            "52234"
         ]
         let selections = [
             "_____",
@@ -65,7 +86,7 @@ class PairInCornerTests: XCTestCase {
     
     func test_TopLeft_PairLeftColumn() {
         let numbers = [
-            "12345",
+            "12342",
             "13451",
             "34512",
             "45123",
@@ -87,7 +108,7 @@ class PairInCornerTests: XCTestCase {
     func test_TopLeft_PairRightColumn() {
         let numbers = [
             "13345",
-            "23451",
+            "23452",
             "34512",
             "45123",
             "51234"
@@ -112,7 +133,7 @@ class PairInCornerTests: XCTestCase {
             "23451",
             "34512",
             "45123",
-            "51234"
+            "51231"
         ]
         let selections = [
             "_____",
@@ -132,7 +153,7 @@ class PairInCornerTests: XCTestCase {
         let numbers = [
             "12345",
             "23411",
-            "34512",
+            "34542",
             "45123",
             "51234"
         ]
@@ -156,7 +177,7 @@ class PairInCornerTests: XCTestCase {
             "23441",
             "34512",
             "45123",
-            "51234"
+            "51231"
         ]
         let selections = [
             "_____",
@@ -175,7 +196,7 @@ class PairInCornerTests: XCTestCase {
         let numbers = [
             "12341",
             "23451",
-            "34512",
+            "34542",
             "45123",
             "51234"
         ]
@@ -199,7 +220,7 @@ class PairInCornerTests: XCTestCase {
             "23451",
             "34512",
             "44123",
-            "51234"
+            "51231"
         ]
         let selections = [
             "_____",
@@ -220,7 +241,7 @@ class PairInCornerTests: XCTestCase {
             "12345",
             "23451",
             "34512",
-            "45123",
+            "45423",
             "11234"
         ]
         let selections = [
@@ -243,7 +264,7 @@ class PairInCornerTests: XCTestCase {
             "23451",
             "34512",
             "45123",
-            "41234"
+            "41231"
         ]
         let selections = [
             "_____",
@@ -261,7 +282,7 @@ class PairInCornerTests: XCTestCase {
     func test_BottomLeft_PairRightColumn() {
         let numbers = [
             "12345",
-            "23451",
+            "43451",
             "34512",
             "41123",
             "51234"
@@ -286,7 +307,7 @@ class PairInCornerTests: XCTestCase {
             "23451",
             "34512",
             "45122",
-            "51234"
+            "31234"
         ]
         let selections = [
             "_____",
@@ -305,7 +326,7 @@ class PairInCornerTests: XCTestCase {
     func test_BottomRight_PairLowerRow() {
         let numbers = [
             "12345",
-            "23412",
+            "23413",
             "34512",
             "45123",
             "51244"
@@ -329,7 +350,7 @@ class PairInCornerTests: XCTestCase {
             "12345",
             "23451",
             "34512",
-            "45123",
+            "35123",
             "51224"
         ]
         let selections = [
@@ -347,7 +368,7 @@ class PairInCornerTests: XCTestCase {
     }
     func test_BottomRight_PairRightColumn() {
         let numbers = [
-            "12345",
+            "12335",
             "23451",
             "34512",
             "45124",

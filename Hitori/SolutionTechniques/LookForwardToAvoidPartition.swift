@@ -10,9 +10,11 @@ import Foundation
 
 class LookForwardToAvoidPartition : SolverTechnique {
     let techniques : [SolverTechnique]
+    let steps : Int?
     
-    init(techniques: [SolverTechnique]) {
+    init(techniques: [SolverTechnique], steps: Int? = nil) {
         self.techniques = techniques
+        self.steps = steps
     }
     
     func solvePosition(board: BoardHandler, x: Int, y: Int) -> Bool {
@@ -23,8 +25,9 @@ class LookForwardToAvoidPartition : SolverTechnique {
                 board.select(x,y)
                 return true
             }else {
-                board.unselect(x,y)
-                return true
+                if RelevantUnselect(board: board).unselect(x,y)>0 {
+                    return true
+                }
             }
         }
         return false
@@ -42,7 +45,7 @@ class LookForwardToAvoidPartition : SolverTechnique {
     }
 
     func solve(board: TechniqueSolverBoard) {
-        _ = board.solve(techniques: techniques)
+        _ = board.solve(techniques: techniques, steps: steps)
     }
     
     func validatePartition(board: BoardHandler) -> Bool {
@@ -63,7 +66,7 @@ class LookForwardToAvoidPartition : SolverTechnique {
         }
         
         if unselectedCells.count>0 {
-            let fieldCells = traverseField(board: board, x: startX!, y: startY!, fieldPositions: [])
+            let fieldCells = traverseField(board: board, x: startX!, y: startY!, fieldPositions: Set<Int>())
             if fieldCells.count == unselectedCells.count {
                 return true
             }
@@ -71,13 +74,13 @@ class LookForwardToAvoidPartition : SolverTechnique {
         return false
     }
     
-    private func traverseField(board: BoardHandler, x: Int, y: Int, fieldPositions: [Int]) -> [Int] {
+    private func traverseField(board: BoardHandler, x: Int, y: Int, fieldPositions: Set<Int>) -> Set<Int> {
         var result = fieldPositions
         let n1 = board.valueAt(x-1,y)
         if x>0 && (n1 == nil || n1!.selected == nil || !n1!.selected!) {
             let pos = y*board.sizeOfBoard()+x-1
             if !result.contains(pos) {
-                result.append(pos)
+                result.insert(pos)
                 result = traverseField(board: board, x: x-1, y: y, fieldPositions: result)
             }
         }
@@ -86,7 +89,7 @@ class LookForwardToAvoidPartition : SolverTechnique {
         if x<board.sizeOfBoard()-1 && (n2 == nil || n2!.selected == nil || !n2!.selected!) {
             let pos = y*board.sizeOfBoard()+x+1
             if !result.contains(pos) {
-                result.append(pos)
+                result.insert(pos)
                 result = traverseField(board: board, x: x+1, y: y, fieldPositions: result)
             }
         }
@@ -95,7 +98,7 @@ class LookForwardToAvoidPartition : SolverTechnique {
         if y>0 && (n3 == nil || n3!.selected == nil || !n3!.selected!) {
             let pos = (y-1)*board.sizeOfBoard()+x
             if !result.contains(pos) {
-                result.append(pos)
+                result.insert(pos)
                 result = traverseField(board: board, x: x, y: y-1, fieldPositions: result)
             }
         }
@@ -104,7 +107,7 @@ class LookForwardToAvoidPartition : SolverTechnique {
         if y<board.sizeOfBoard()-1 && (n4 == nil || n4!.selected == nil || !n4!.selected!) {
             let pos = (y+1)*board.sizeOfBoard()+x
             if !result.contains(pos) {
-                result.append(pos)
+                result.insert(pos)
                 result = traverseField(board: board, x: x, y: y+1, fieldPositions: result)
             }
         }
@@ -140,5 +143,4 @@ class LookForwardToAvoidPartition : SolverTechnique {
         }
         return selections
     }
-
 }

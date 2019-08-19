@@ -11,7 +11,6 @@ protocol BoardHandler {
     func select(_ x: Int, _ y: Int)
     func unselect(_ x: Int, _ y: Int)
     func valueAt(_ x: Int, _ y: Int) -> BoardCell?
-    func isValid(x: Int, y: Int, value: BoardCell) -> Bool
     func sizeOfBoard() -> Int
 }
 

@@ -96,6 +96,9 @@
 		DC04A1B223086E4B00A0DB77 /* LookForwardToAvoidPartitionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC04A1B123086E4B00A0DB77 /* LookForwardToAvoidPartitionTests.swift */; };
 		DC04A1B32308833D00A0DB77 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = DC04A1B62308833D00A0DB77 /* Localizable.strings */; };
 		DC04A1B42308833D00A0DB77 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = DC04A1B62308833D00A0DB77 /* Localizable.strings */; };
+		DC04A1B92309291B00A0DB77 /* BruteForceSolverBoardTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC04A1B82309291B00A0DB77 /* BruteForceSolverBoardTests.swift */; };
+		DC04A1BD230A856900A0DB77 /* LonelyChecker.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC04A1BC230A856900A0DB77 /* LonelyChecker.swift */; };
+		DC04A1BF230A863300A0DB77 /* RelevantUnselect.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC04A1BE230A863300A0DB77 /* RelevantUnselect.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -178,6 +181,9 @@
 		DC04A1B123086E4B00A0DB77 /* LookForwardToAvoidPartitionTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LookForwardToAvoidPartitionTests.swift; sourceTree = "<group>"; };
 		DC04A1B52308833D00A0DB77 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		DC04A1B72308835400A0DB77 /* sv */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = sv; path = sv.lproj/Localizable.strings; sourceTree = "<group>"; };
+		DC04A1B82309291B00A0DB77 /* BruteForceSolverBoardTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BruteForceSolverBoardTests.swift; sourceTree = "<group>"; };
+		DC04A1BC230A856900A0DB77 /* LonelyChecker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LonelyChecker.swift; sourceTree = "<group>"; };
+		DC04A1BE230A863300A0DB77 /* RelevantUnselect.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RelevantUnselect.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -280,6 +286,7 @@
 				DC04A1A3230817EF00A0DB77 /* PairAndCrossedPairTests.swift */,
 				DC04A1AD23085FD800A0DB77 /* PairInCornerTests.swift */,
 				DC04A1B123086E4B00A0DB77 /* LookForwardToAvoidPartitionTests.swift */,
+				DC04A1B82309291B00A0DB77 /* BruteForceSolverBoardTests.swift */,
 			);
 			path = HitoriTests;
 			sourceTree = "<group>";
@@ -303,6 +310,8 @@
 				DC04A1A12308144B00A0DB77 /* PairAndCrossedPair.swift */,
 				DC04A1AB23085CEE00A0DB77 /* PairInCorner.swift */,
 				DC04A1AF2308661800A0DB77 /* LookForwardToAvoidPartition.swift */,
+				DC04A1BC230A856900A0DB77 /* LonelyChecker.swift */,
+				DC04A1BE230A863300A0DB77 /* RelevantUnselect.swift */,
 			);
 			path = SolutionTechniques;
 			sourceTree = "<group>";
@@ -466,9 +475,11 @@
 				DC04A1282306A1F500A0DB77 /* SingleGameOverScene.swift in Sources */,
 				DC04A1392306A1F500A0DB77 /* Difficulty.swift in Sources */,
 				DC04A12E2306A1F500A0DB77 /* Color.swift in Sources */,
+				DC04A1BD230A856900A0DB77 /* LonelyChecker.swift in Sources */,
 				DC04A1A22308144B00A0DB77 /* PairAndCrossedPair.swift in Sources */,
 				DC04A12C2306A1F500A0DB77 /* BruteForceSolverBoard.swift in Sources */,
 				DC04A1332306A1F500A0DB77 /* Array2D.swift in Sources */,
+				DC04A1BF230A863300A0DB77 /* RelevantUnselect.swift in Sources */,
 				DC04A18A2307BE9200A0DB77 /* UnshadeAroundShaded.swift in Sources */,
 				DC04A1352306A1F500A0DB77 /* TechniqueSolverBoard.swift in Sources */,
 				DC04A12D2306A1F500A0DB77 /* AbstractSolverBoard.swift in Sources */,
@@ -506,6 +517,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DC04A1B92309291B00A0DB77 /* BruteForceSolverBoardTests.swift in Sources */,
 				DC04A1A023080CBE00A0DB77 /* TwoPairsWithNumberBetweenTests.swift in Sources */,
 				DC04A1B223086E4B00A0DB77 /* LookForwardToAvoidPartitionTests.swift in Sources */,
 				DC04A1042306A16400A0DB77 /* BoardTests.swift in Sources */,
