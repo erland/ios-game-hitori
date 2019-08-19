@@ -18,7 +18,7 @@ class BoardGeneratorTests: XCTestCase {
     override func tearDown() {
         // Put teardown code here. This method is called after the invocation of each test method in the class.
     }
-    
+    /*
     func test_generateFilledBoard_size_5() {
         for n in 0..<30 {
             if let board = BoardGenerator(size: 5).generateWithLimits(timeoutSeconds: 10) {
@@ -50,7 +50,7 @@ class BoardGeneratorTests: XCTestCase {
             }
         }
     }
-
+*/
     /*
     func testGenerate_size_5() {
         for _ in 0..<10 {
