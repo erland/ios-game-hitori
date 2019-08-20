@@ -146,4 +146,31 @@ class UnshadeToAvoidPartitionTests: XCTestCase {
         board.initializeSelections(selectionString: selections.joined())
         XCTAssert(!UnshadeToAvoidPartition().solvePosition(board: board, x: 2, y: 4))
     }
+    
+    func test_Performance() {
+        let numbers = [
+            "1 2 3 4 5",
+            "2 3 4 5 1",
+            "3 4 2 1 2",
+            "4 5 1 2 3",
+            "5 1 2 3 4"
+        ]
+        let selections = [
+            "_ _ _ _ _",
+            "_ X _ X _",
+            "X _ _ _ X",
+            "_ X _ X _",
+            "_ _ _ _ _"
+        ]
+        
+        let board = AbstractSolverBoard(boardString: numbers.joined())
+        board.initializeSelections(selectionString: selections.joined())
+
+        self.measure {
+            for _ in 0..<5000 {
+                _ = UnshadeToAvoidPartition().solvePosition(board: board, x: 2, y: 4)
+            }
+        }
+    }
+
 }

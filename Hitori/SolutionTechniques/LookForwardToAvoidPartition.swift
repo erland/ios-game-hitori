@@ -66,56 +66,14 @@ class LookForwardToAvoidPartition : SolverTechnique {
         }
         
         if unselectedCells.count>0 {
-            let fieldCells = traverseField(board: board, x: startX!, y: startY!, fieldPositions: Set<Int>())
-            if fieldCells.count == unselectedCells.count {
+            let fieldSize = FieldHelper(board: board).sizeOfField(startX!, startY!)
+            if fieldSize == unselectedCells.count {
                 return true
             }
         }
         return false
     }
-    
-    private func traverseField(board: BoardHandler, x: Int, y: Int, fieldPositions: Set<Int>) -> Set<Int> {
-        var result = fieldPositions
-        let n1 = board.valueAt(x-1,y)
-        if x>0 && (n1 == nil || n1!.selected == nil || !n1!.selected!) {
-            let pos = y*board.sizeOfBoard()+x-1
-            if !result.contains(pos) {
-                result.insert(pos)
-                result = traverseField(board: board, x: x-1, y: y, fieldPositions: result)
-            }
-        }
         
-        let n2 = board.valueAt(x+1,y)
-        if x<board.sizeOfBoard()-1 && (n2 == nil || n2!.selected == nil || !n2!.selected!) {
-            let pos = y*board.sizeOfBoard()+x+1
-            if !result.contains(pos) {
-                result.insert(pos)
-                result = traverseField(board: board, x: x+1, y: y, fieldPositions: result)
-            }
-        }
-        
-        let n3 = board.valueAt(x,y-1)
-        if y>0 && (n3 == nil || n3!.selected == nil || !n3!.selected!) {
-            let pos = (y-1)*board.sizeOfBoard()+x
-            if !result.contains(pos) {
-                result.insert(pos)
-                result = traverseField(board: board, x: x, y: y-1, fieldPositions: result)
-            }
-        }
-        
-        let n4 = board.valueAt(x,y+1)
-        if y<board.sizeOfBoard()-1 && (n4 == nil || n4!.selected == nil || !n4!.selected!) {
-            let pos = (y+1)*board.sizeOfBoard()+x
-            if !result.contains(pos) {
-                result.insert(pos)
-                result = traverseField(board: board, x: x, y: y+1, fieldPositions: result)
-            }
-        }
-        
-        return result
-    }
-
-    
     func boardAsString(board: BoardHandler) -> String {
         var numbers = ""
         for y in 0..<board.sizeOfBoard() {

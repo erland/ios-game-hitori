@@ -11,7 +11,7 @@ import SpriteKit
 protocol BoardObserver : class {
     func numberAdded(number: Number)
 }
-class Board {
+class Board : BoardReadHandler {
     let name: String
     let width: Int
     let height: Int
@@ -19,12 +19,14 @@ class Board {
     var numbers: Set<Number> = Set()
     var observers: [BoardObserver] = []
     let debug = false
+    var fieldHelper: FieldHelper?
     
     init(name: String, width: Int, height: Int) {
         self.name = name
         self.width = width
         self.height = height
         self.board = Array2D<Number>(columns: width, rows: height)
+        fieldHelper = FieldHelper(board: self)
         for y in 0..<height {
             for x in 0..<width {
                 let n = Number(x: x, y: y, number: 0)
@@ -42,6 +44,7 @@ class Board {
         self.width = board.columns
         self.height = board.rows
         self.board = board
+        fieldHelper = FieldHelper(board: self)
     }
     
     convenience init(name: String, boardNumbers: String) {
@@ -193,8 +196,8 @@ class Board {
             }
         }
         
-        let fieldPositions = traverseField(x: notSelectedX!, y: notSelectedY!, fieldPositions: [])
-        if fieldPositions.count != notSelectedPositions.count {
+        let fieldSize = fieldHelper!.sizeOfField(notSelectedX!, notSelectedY!)
+        if fieldSize != notSelectedPositions.count {
             return false
         }
         
@@ -202,45 +205,36 @@ class Board {
 
     }
     
-    private func traverseField(x: Int, y: Int, fieldPositions: [Int]) -> [Int] {
-        var result = fieldPositions
-        if let n = board[x-1,y] {
-            if n.state != .Selected {
-                let pos = y*width+x-1
-                if !result.contains(pos) {
-                    result.append(pos)
-                    result = traverseField(x: x-1, y: y, fieldPositions: result)
-                }
+    func valueAt(_ x: Int, _ y: Int) -> BoardCell? {
+        if let n = atPosition(x, y) {
+            switch n.state {
+            case .Selected:
+                return BoardCell(number:n.number, selected: true)
+            case .Candidate:
+                return BoardCell(number:n.number, selected: false)
+            case .Unselected:
+                return BoardCell(number:n.number, selected: nil)
             }
         }
-        if let n = board[x+1,y] {
-            if n.state != .Selected {
-                let pos = y*width+x+1
-                if !result.contains(pos) {
-                    result.append(pos)
-                    result = traverseField(x: x+1, y: y, fieldPositions: result)
-                }
+        return nil
+    }
+    
+    func valueAt(_ x: Int, _ y: Int, unsafe: Bool) -> BoardCell? {
+        if let n = atPosition(x, y) {
+            switch n.state {
+            case .Selected:
+                return BoardCell(number:n.number, selected: true)
+            case .Candidate:
+                return BoardCell(number:n.number, selected: false)
+            case .Unselected:
+                return BoardCell(number:n.number, selected: nil)
             }
         }
-        if let n = board[x,y-1] {
-            if n.state != .Selected {
-                let pos = (y-1)*width+x
-                if !result.contains(pos) {
-                    result.append(pos)
-                    result = traverseField(x: x, y: y-1, fieldPositions: result)
-                }
-            }
-        }
-        if let n = board[x,y+1] {
-            if n.state != .Selected {
-                let pos = (y+1)*width+x
-                if !result.contains(pos) {
-                    result.append(pos)
-                    result = traverseField(x: x, y: y+1, fieldPositions: result)
-                }
-            }
-        }
-        return result
+        return nil
+    }
+    
+    func sizeOfBoard() -> Int {
+        return self.width
     }
         
     func asString(withSelections: Bool = false) -> String {

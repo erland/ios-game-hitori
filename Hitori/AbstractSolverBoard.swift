@@ -10,12 +10,14 @@ class AbstractSolverBoard : BoardHandler {
     var size : Int
     var board: Array<BoardCell?>
     let debug: Bool
+    var fieldHelper: FieldHelper?
 
     init(boardString: String, debug: Bool = false) {
         self.debug = debug
         let numbers = boardString.replacingOccurrences(of: " ", with: "")
         size = AbstractSolverBoard.sizeOfBoard(boardString: numbers)
         board = Array<BoardCell?>(repeating: nil, count:size * size)
+        fieldHelper = FieldHelper(board: self)
         initializeBoard(boardString: numbers)
     }
 
@@ -123,7 +125,14 @@ class AbstractSolverBoard : BoardHandler {
         }
         return nil
     }
-    
+    func valueAt(_ x: Int, _ y: Int, unsafe: Bool) -> BoardCell? {
+        if unsafe {
+            return board[y*size+x]
+        }else {
+            return valueAt(x,y)
+        }
+    }
+
     func printBoard() {
         for y in 0..<size {
             var rowString = ""
@@ -224,8 +233,8 @@ class AbstractSolverBoard : BoardHandler {
             nearByCells = nearByCells + fieldBorderContribution(x-1,y+1)
             nearByCells = nearByCells + fieldBorderContribution(x+1,y+1)
             if nearByCells>=2 {
-                let fieldPositions = traverseField(x: notSelectedX!, y: notSelectedY!, fieldPositions: Set<Int>())
-                if fieldPositions.count != notSelectedPositions.count {
+                let fieldSize = fieldHelper!.sizeOfField(notSelectedX!, notSelectedY!)
+                if fieldSize != notSelectedPositions.count {
                     return false
                 }
             }
@@ -242,46 +251,5 @@ class AbstractSolverBoard : BoardHandler {
             }
         }
         return 1
-    }
-    
-    private func traverseField(x: Int, y: Int, fieldPositions: Set<Int>) -> Set<Int> {
-        var result = fieldPositions
-        let n1 = valueAt(x-1,y)
-        if x>0 && (n1 == nil || n1!.selected == nil || !n1!.selected!) {
-            let pos = y*size+x-1
-            if !result.contains(pos) {
-                result.insert(pos)
-                result = traverseField(x: x-1, y: y, fieldPositions: result)
-            }
-        }
-
-        let n2 = valueAt(x+1,y)
-        if x<size-1 && (n2 == nil || n2!.selected == nil || !n2!.selected!) {
-            let pos = y*size+x+1
-            if !result.contains(pos) {
-                result.insert(pos)
-                result = traverseField(x: x+1, y: y, fieldPositions: result)
-            }
-        }
-        
-        let n3 = valueAt(x,y-1)
-        if y>0 && (n3 == nil || n3!.selected == nil || !n3!.selected!) {
-            let pos = (y-1)*size+x
-            if !result.contains(pos) {
-                result.insert(pos)
-                result = traverseField(x: x, y: y-1, fieldPositions: result)
-            }
-        }
-
-        let n4 = valueAt(x,y+1)
-        if y<size-1 && (n4 == nil || n4!.selected == nil || !n4!.selected!) {
-            let pos = (y+1)*size+x
-            if !result.contains(pos) {
-                result.insert(pos)
-                result = traverseField(x: x, y: y+1, fieldPositions: result)
-            }
-        }
-
-        return result
     }
 }

@@ -396,4 +396,30 @@ class HitoriTests: XCTestCase {
         board.initializeStates(stateIndications: selections.joined())
         XCTAssert(board.isValidBoard())
     }
+
+    func test_isValid_Performance() {
+        let numbers = [
+            "12345",
+            "23451",
+            "34512",
+            "45123",
+            "51234"
+        ]
+        let selections = [
+            "__?__",
+            "_X_X_",
+            "?_?_?",
+            "_X_X_",
+            "__?__"
+        ]
+        
+        let board = Board(name: "test", boardNumbers: numbers.joined())
+        board.initializeStates(stateIndications: selections.joined())
+        
+        self.measure {
+            for _ in 0..<5000 {
+                _ = board.isValidBoard()
+            }
+        }
+    }
 }

@@ -69,4 +69,33 @@ class LookForwardToAvoidPartitionTests: XCTestCase {
         XCTAssert(!(board.valueAt(1,3)?.selected ?? true))
     }
 
+    func test_Performance() {
+        let numbers = [
+            "34321",
+            "23554",
+            "41353",
+            "33155",
+            "45432"
+        ]
+        let selections = [
+            "_____",
+            "_____",
+            "_?___",
+            "?X?__",
+            "_?___"
+        ]
+        
+        let board = AbstractSolverBoard(boardString: numbers.joined())
+        board.initializeSelections(selectionString: selections.joined())
+        
+        self.measure {
+            for _ in 0..<1000 {
+                _ = LookForwardToAvoidPartition(techniques: [
+                    ShadingInRowsColumns()
+                    ]).solvePosition(board: board, x: 0, y: 4)
+            }
+        }
+        
+    }
+
 }

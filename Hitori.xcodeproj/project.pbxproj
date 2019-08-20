@@ -115,6 +115,9 @@
 		DC04A1CD230A8BE000A0DB77 /* TwoParisAtBorder.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC04A1992307E95300A0DB77 /* TwoParisAtBorder.swift */; };
 		DC04A1CE230A8BE000A0DB77 /* TwoPairsWIthNumberBetween.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC04A19D2307FF8500A0DB77 /* TwoPairsWIthNumberBetween.swift */; };
 		DC04A1CF230A8BE000A0DB77 /* PairAndCrossedPair.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC04A1A12308144B00A0DB77 /* PairAndCrossedPair.swift */; };
+		DC634D6B230BB7F300953550 /* FieldHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC634D6A230BB7F300953550 /* FieldHelper.swift */; };
+		DC634D6D230BB9BE00953550 /* FieldHelperTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC634D6C230BB9BE00953550 /* FieldHelperTests.swift */; };
+		DC634D6E230BD12200953550 /* FieldHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC634D6A230BB7F300953550 /* FieldHelper.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -207,6 +210,8 @@
 		DC04A1B82309291B00A0DB77 /* BruteForceSolverBoardTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BruteForceSolverBoardTests.swift; sourceTree = "<group>"; };
 		DC04A1BC230A856900A0DB77 /* LonelyChecker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LonelyChecker.swift; sourceTree = "<group>"; };
 		DC04A1BE230A863300A0DB77 /* RelevantUnselect.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RelevantUnselect.swift; sourceTree = "<group>"; };
+		DC634D6A230BB7F300953550 /* FieldHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FieldHelper.swift; sourceTree = "<group>"; };
+		DC634D6C230BB9BE00953550 /* FieldHelperTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FieldHelperTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -310,6 +315,7 @@
 				DC04A1AD23085FD800A0DB77 /* PairInCornerTests.swift */,
 				DC04A1B123086E4B00A0DB77 /* LookForwardToAvoidPartitionTests.swift */,
 				DC04A1B82309291B00A0DB77 /* BruteForceSolverBoardTests.swift */,
+				DC634D6C230BB9BE00953550 /* FieldHelperTests.swift */,
 			);
 			path = HitoriTests;
 			sourceTree = "<group>";
@@ -335,6 +341,7 @@
 				DC04A1AF2308661800A0DB77 /* LookForwardToAvoidPartition.swift */,
 				DC04A1BC230A856900A0DB77 /* LonelyChecker.swift */,
 				DC04A1BE230A863300A0DB77 /* RelevantUnselect.swift */,
+				DC634D6A230BB7F300953550 /* FieldHelper.swift */,
 			);
 			path = SolutionTechniques;
 			sourceTree = "<group>";
@@ -519,6 +526,7 @@
 				DC04A1882307BD7700A0DB77 /* ShadingInRowsColumns.swift in Sources */,
 				DC04A1312306A1F500A0DB77 /* BoardGenerator.swift in Sources */,
 				DC04A0E92306A16200A0DB77 /* AppDelegate.swift in Sources */,
+				DC634D6B230BB7F300953550 /* FieldHelper.swift in Sources */,
 				DC04A1362306A1F500A0DB77 /* GameDelegate.swift in Sources */,
 				DC04A1B02308661800A0DB77 /* LookForwardToAvoidPartition.swift in Sources */,
 				DC04A12F2306A1F500A0DB77 /* Number.swift in Sources */,
@@ -551,6 +559,7 @@
 				DC04A1962307CE5300A0DB77 /* TwoPairsInCornerTests.swift in Sources */,
 				DC04A17C2306F75C00A0DB77 /* AbstractSolverBoardTests.swift in Sources */,
 				DC04A1AA2308572400A0DB77 /* HitoryRepositoryTests.swift in Sources */,
+				DC634D6D230BB9BE00953550 /* FieldHelperTests.swift in Sources */,
 				DC04A1A4230817EF00A0DB77 /* PairAndCrossedPairTests.swift in Sources */,
 				DC04A1AE23085FD800A0DB77 /* PairInCornerTests.swift in Sources */,
 				DC04A1862307138600A0DB77 /* PairInductionTests.swift in Sources */,
@@ -586,6 +595,7 @@
 				DC04A1762306C78C00A0DB77 /* GameViewController.swift in Sources */,
 				DC04A1C3230A8BD400A0DB77 /* PairInCorner.swift in Sources */,
 				DC04A1642306C78700A0DB77 /* BoardView.swift in Sources */,
+				DC634D6E230BD12200953550 /* FieldHelper.swift in Sources */,
 				DC04A1C1230A8BCC00A0DB77 /* LonelyChecker.swift in Sources */,
 				DC04A1C8230A8BE000A0DB77 /* ShadingInRowsColumns.swift in Sources */,
 				DC04A15F2306C78700A0DB77 /* AbstractSolverBoard.swift in Sources */,
